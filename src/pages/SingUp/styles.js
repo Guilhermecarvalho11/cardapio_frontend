@@ -9,17 +9,6 @@ export const Container = styled.div`
   justify-content: center;
   margin: 0 auto;
 
-  .title {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 50px;
-
-    > h1 {
-      color: white;
-      font-family: roboto;
-    }
-  }
-
   > label {
     color: white;
     font-family: roboto;

@@ -1,15 +1,12 @@
 import { Button } from "../../components/Button";
 import { Forms } from "../../components/Input";
 import { ButonLink } from "../../components/LinkButton";
+import { Logo } from "../../components/Logo";
 import { Container } from "./styles";
-import PolygnoSVG from "../../assets/Polygon.png";
 export function SignUp() {
   return (
     <Container>
-      <div className="title">
-        <img src={PolygnoSVG} />
-        <h1>Food Explorer</h1>
-      </div>
+      <Logo />
       <label htmlFor="name">Seu nome</label>
       <Forms id="name" type="text" placeholder="Exemplo: Maria da Silva" />
 
