@@ -1,11 +1,16 @@
 import PolygnoSVG from "../../assets/Polygon.png";
-import { Tile } from "./styles";
+import PropTypes from "prop-types";
+import { Title } from "./styles";
 
-export function Logo() {
+export function Logo({ primary }) {
   return (
-    <Tile>
+    <Title primary={primary}>
       <img src={PolygnoSVG} />
       <h1>Food Explorer</h1>
-    </Tile>
+    </Title>
   );
 }
+
+Logo.propTypes = {
+  primary: PropTypes.string.isRequired,
+};

@@ -1,28 +1,28 @@
 import { Button } from "../../components/Button";
-import { Forms } from "../../components/Input";
+import { Input } from "../../components/Input";
 import { ButonLink } from "../../components/LinkButton";
 import { Logo } from "../../components/Logo";
 import { Container } from "./styles";
 export function SignUp() {
   return (
     <Container>
-      <Logo />
+      <Logo primary />
       <label htmlFor="name">Seu nome</label>
-      <Forms id="name" type="text" placeholder="Exemplo: Maria da Silva" />
+      <Input id="name" type="text" placeholder="Exemplo: Maria da Silva" />
 
       <label htmlFor="email">email</label>
-      <Forms
+      <Input
         id="email"
         type="email"
         placeholder="Exemplo: exemplo@exemplo.com.br"
       />
       <label htmlFor="password">senha</label>
-      <Forms
+      <Input
         id="password"
         type="password"
         placeholder="No minimo 6 caracteres"
       />
-      <Button title="Entrar" />
+      <Button title="Criar conta" />
 
       <ButonLink title="Já tenho uma conta" />
     </Container>

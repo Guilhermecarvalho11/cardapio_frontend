@@ -1,21 +1,21 @@
 import { Button } from "../../components/Button";
-import { Forms } from "../../components/Input";
+import { Input } from "../../components/Input";
 import { ButonLink } from "../../components/LinkButton";
 import { Container } from "./styles";
 import { Logo } from "../../components/Logo";
 export function SignIn() {
   return (
     <Container>
-      <Logo />
+      <Logo primary />
 
       <label htmlFor="email">email</label>
-      <Forms
+      <Input
         id="email"
         type="email"
         placeholder="Exemplo: exemplo@exemplo.com.br"
       />
       <label htmlFor="password">senha</label>
-      <Forms
+      <Input
         id="password"
         type="password"
         placeholder="No minimo 6 caracteres"
