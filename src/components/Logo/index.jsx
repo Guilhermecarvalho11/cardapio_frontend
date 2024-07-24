@@ -12,5 +12,5 @@ export function Logo({ primary }) {
 }
 
 Logo.propTypes = {
-  primary: PropTypes.string.isRequired,
+  primary: PropTypes.string,
 };

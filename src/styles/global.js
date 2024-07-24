@@ -8,6 +8,6 @@ export default createGlobalStyle`
 }
 
 body{
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BLACK};
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
 }
 `;

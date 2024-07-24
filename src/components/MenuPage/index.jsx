@@ -1,6 +1,6 @@
 import { X } from "@phosphor-icons/react";
 import { MagnifyingGlassPlus } from "@phosphor-icons/react";
-import { Forms } from "../Input";
+import { Input } from "../Input";
 import { ButonLink } from "../LinkButton";
 import { Container, Div } from "./styles";
 
@@ -12,7 +12,7 @@ export function Menu() {
         <h2>Menu</h2>
       </Container>
       <Div>
-        <Forms
+        <Input
           icon={MagnifyingGlassPlus}
           id="search"
           type="text"

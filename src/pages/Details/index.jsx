@@ -1,16 +1,16 @@
 // import { SignIn } from "../SignIn/index";
 // import { SignUp } from "../SingUp";
 
-import { Menu } from "../../components/MenuPage";
-// import { Home } from "../Home";
+// import { Menu } from "../../components/MenuPage";
+import { Home } from "../Home";
 
 export function Details() {
   return (
     <>
-      <Menu />
+      {/* <Menu /> */}
       {/* <SignIn /> */}
       {/* <SignUp /> */}
-      {/* <Home /> */}
+      <Home />
     </>
   );
 }
