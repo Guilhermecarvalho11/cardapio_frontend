@@ -6,6 +6,11 @@ export const Container = styled.div`
   width: 88%;
   margin: 0 auto;
 `;
+export const Title = styled.h2`
+  color: white;
+  font-family: roboto;
+  font-size: 18px;
+`;
 
 export const Banner = styled.div`
   display: flex;
