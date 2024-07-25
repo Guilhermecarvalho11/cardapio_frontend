@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-export const Title = styled.h2`
-  color: white;
-  font-family: roboto;
-`;
-
 export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 210px;
   height: 292px;
   background: #00070a;
@@ -13,21 +10,28 @@ export const CardContainer = styled.div`
   padding: 10px;
   border-radius: 5px;
   text-align: center;
+  border: 1px solid red;
 `;
 
 export const Icon = styled.div`
+  display: flex;
+  justify-content: end;
   font-size: 24px;
-  margin-bottom: 10px;
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  height: 100px;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  display: flex;
+  margin: 0 auto;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
-export const Name = styled.h3`
+export const Name = styled.button`
+  color: white;
+  background: transparent;
   font-size: 18px;
   margin-bottom: 5px;
 `;

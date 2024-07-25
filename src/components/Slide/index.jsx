@@ -8,8 +8,8 @@ import { CustomNavigation } from "../CustomNavigation";
 export function Slide({ products }) {
   return (
     <Swiper
-      spaceBetween={30}
-      slidesPerView={3}
+      spaceBetween={250}
+      slidesPerView={2}
       pagination={{ clickable: true }}
       navigation={CustomNavigation}
       style={{ width: "100%", height: "auto" }}
