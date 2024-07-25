@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
 export const CardContainer = styled.div`
   display: flex;
@@ -10,7 +15,6 @@ export const CardContainer = styled.div`
   padding: 10px;
   border-radius: 5px;
   text-align: center;
-  border: 1px solid red;
 `;
 
 export const Icon = styled.div`
@@ -29,7 +33,7 @@ export const Image = styled.img`
   margin-bottom: 20px;
 `;
 
-export const Name = styled.button`
+export const Name = styled.h3`
   color: white;
   background: transparent;
   font-size: 18px;

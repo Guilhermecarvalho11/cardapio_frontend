@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import { Card } from "../Cards";
-import { IoIosHeartEmpty } from "react-icons/io";
 import { CustomNavigation } from "../CustomNavigation";
 
 export function Slide({ products }) {
@@ -18,7 +17,7 @@ export function Slide({ products }) {
       {products.map((product) => (
         <SwiperSlide key={product.id}>
           <Card
-            icon={<IoIosHeartEmpty />}
+            icon={product.icon}
             image={product.image}
             name={product.name}
             price={product.price}

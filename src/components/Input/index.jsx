@@ -12,5 +12,5 @@ Input.propTypes = {
   id: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  icon: PropTypes.icon,
+  icon: PropTypes.elementType,
 };

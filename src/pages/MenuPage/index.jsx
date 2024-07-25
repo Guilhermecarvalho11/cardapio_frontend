@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
-
 import { X } from "@phosphor-icons/react";
 import { MagnifyingGlassPlus } from "@phosphor-icons/react";
 import { Input } from "../../components/Input";
 import { LinkButton } from "../../components/LinkButton";
 import { Container, Div } from "./styles";
+import { MdNavigateBefore } from "react-icons/md";
 
 export function Menu() {
   return (
@@ -20,9 +19,8 @@ export function Menu() {
           type="text"
           placeholder="Busque por pratos ou ingredientes"
         />
-        <Link to="/">
-          <LinkButton title="Sair" />
-        </Link>
+
+        <LinkButton title="Sair" to="/" icons={MdNavigateBefore} />
       </Div>
     </>
   );
