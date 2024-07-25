@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 import { X } from "@phosphor-icons/react";
 import { MagnifyingGlassPlus } from "@phosphor-icons/react";
-import { Input } from "../Input";
-import { ButonLink } from "../LinkButton";
+import { Input } from "../../components/Input";
+import { LinkButton } from "../../components/LinkButton";
 import { Container, Div } from "./styles";
 
 export function Menu() {
@@ -18,8 +20,9 @@ export function Menu() {
           type="text"
           placeholder="Busque por pratos ou ingredientes"
         />
-
-        <ButonLink title="Sair" />
+        <Link to="/">
+          <LinkButton title="Sair" />
+        </Link>
       </Div>
     </>
   );

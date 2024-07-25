@@ -1,8 +1,19 @@
 import styled from "styled-components";
 
-export const ButtonLink = styled.a`
-  font-family: roboto;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: transparent;
+
+  > a {
+    font-family: roboto;
+    color: white;
+    text-decoration: none;
+  }
+`;
+export const Icons = styled.div`
+  display: flex;
+  font-size: 34px;
   color: white;
-  text-decoration: none;
-  margin-top: 30px;
 `;

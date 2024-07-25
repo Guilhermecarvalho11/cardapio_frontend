@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { FaPlus, FaMinus } from "react-icons/fa";
@@ -28,7 +29,9 @@ export function Card({ icon, image, name, price }) {
       <CardContainer>
         <Icon>{icon}</Icon>
         <Image src={image} alt={name} />
-        <Name>{name}</Name>
+        <Link to="/dishs">
+          <Name>{name}</Name>
+        </Link>
         <Price>${price}</Price>
         <QuantityContainer>
           <Button onClick={handleDecrease}>
