@@ -1,6 +1,6 @@
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import { ButonLink } from "../../components/LinkButton";
+import { LinkButton } from "../../components/LinkButton";
 import { Logo } from "../../components/Logo";
 import { Container } from "./styles";
 export function SignUp() {
@@ -24,7 +24,7 @@ export function SignUp() {
       />
       <Button title="Criar conta" />
 
-      <ButonLink title="Já tenho uma conta" />
+      <LinkButton title="Já tenho uma conta" to="/signin" />
     </Container>
   );
 }

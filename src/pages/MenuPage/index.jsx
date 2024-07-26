@@ -3,14 +3,12 @@ import { MagnifyingGlassPlus } from "@phosphor-icons/react";
 import { Input } from "../../components/Input";
 import { LinkButton } from "../../components/LinkButton";
 import { Container, Div } from "./styles";
-import { MdNavigateBefore } from "react-icons/md";
 
 export function Menu() {
   return (
     <>
       <Container>
-        <X />
-        <h2>Menu</h2>
+        <LinkButton title="Menu" to="/" icons={X} />
       </Container>
       <Div>
         <Input
@@ -20,7 +18,7 @@ export function Menu() {
           placeholder="Busque por pratos ou ingredientes"
         />
 
-        <LinkButton title="Sair" to="/" icons={MdNavigateBefore} />
+        <LinkButton title="Sair" to="/register" />
       </Div>
     </>
   );

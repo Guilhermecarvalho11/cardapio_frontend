@@ -22,7 +22,7 @@ export function SignIn() {
       />
       <Button title="Entrar" />
 
-      <LinkButton title="criar uma conta" />
+      <LinkButton title="criar uma conta" to="/register" />
     </Container>
   );
 }

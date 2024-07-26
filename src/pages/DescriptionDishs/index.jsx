@@ -12,10 +12,10 @@ export function DescriptionDishs() {
       <Header />
       <LinkButton icons={MdNavigateBefore} title="Voltar" to="/" />
       <Card
-        icon={<CiHeart />} // Exemplo de ícone, pode ser omitido se não for necessário
-        image={imageMeals} // Substitua pela URL da imagem
-        name="Nome do Prato" // Substitua pelo nome do prato
-        price={10.99} // Substitua pelo preço
+        icon={<CiHeart />}
+        image={imageMeals}
+        name="Nome do Prato"
+        price={10.99}
       />
     </>
   );
