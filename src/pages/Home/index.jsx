@@ -3,6 +3,7 @@ import { Banner, Container, Title } from "./styles";
 import imgBanner from "../../assets/imgBanner.svg";
 import imgMeals from "../../assets/imageMeals.svg";
 import { Slide } from "../../components/Slide";
+import { Footer } from "../../components/Footer";
 
 export function Home() {
   const products = [
@@ -43,6 +44,7 @@ export function Home() {
         <Title>Pratos Principais</Title>
         <Slide products={mainDishs} />
       </Container>
+      <Footer />
     </>
   );
 }

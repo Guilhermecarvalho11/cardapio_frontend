@@ -1,10 +1,12 @@
-import { Buton } from "./styles";
+import { Container } from "./styles";
 import PropTypes from "prop-types";
 
 export function Button({ title }) {
   return (
     <>
-      <Buton>{title}</Buton>
+      <Container>
+        <button>{title}</button>
+      </Container>
     </>
   );
 }

@@ -1,4 +1,4 @@
-// import { SignIn } from "../SignIn/index";
+import { SignIn } from "../SignIn/index";
 // import { SignUp } from "../SingUp";
 
 // import { DescriptionDishs } from "../../components/DescriptionDishs";
@@ -10,7 +10,7 @@ export function Details() {
   return (
     <>
       {/* <Menu /> */}
-      {/* <SignIn /> */}
+      <SignIn />
       {/* <SignUp /> */}
       <Home />
       {/* <DescriptionDishs /> */}

@@ -10,6 +10,7 @@ export const Title = styled.h2`
   color: white;
   font-family: roboto;
   font-size: 18px;
+  margin: 22px 0 22px 0;
 `;
 
 export const Banner = styled.div`

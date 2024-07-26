@@ -11,7 +11,7 @@ export function Header() {
           <List />
         </Menu>
       </Link>
-      <Logo />
+      <Logo fontSize={"37px"} />
       <Bag />
     </Container>
   );

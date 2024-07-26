@@ -1,13 +1,13 @@
 import PolygnoSVG from "../../assets/Polygon.png";
 import PropTypes from "prop-types";
-import { Title } from "./styles";
+import { Container } from "./styles";
 
-export function Logo({ primary }) {
+export function Logo({ primary, fontSize }) {
   return (
-    <Title primary={primary}>
+    <Container primary={primary}>
       <img src={PolygnoSVG} />
-      <h1>Food Explorer</h1>
-    </Title>
+      <h1 style={{ fontSize: fontSize }}>Food Explorer</h1>
+    </Container>
   );
 }
 

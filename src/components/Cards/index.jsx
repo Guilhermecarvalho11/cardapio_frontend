@@ -3,7 +3,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { IoIosHeartEmpty } from "react-icons/io";
-
+import { Button } from "../Button";
 import {
   CardContainer,
   Icon,
@@ -11,7 +11,7 @@ import {
   Name,
   Price,
   QuantityContainer,
-  Button,
+  Buton,
   Quantity,
   IncludeButton,
   StyledLink,
@@ -37,15 +37,15 @@ export function Card({ image, name, price }) {
         </StyledLink>
         <Price>${price}</Price>
         <QuantityContainer>
-          <Button onClick={handleDecrease}>
+          <Buton onClick={handleDecrease}>
             <FaMinus />
-          </Button>
+          </Buton>
           <Quantity>{quantity}</Quantity>
-          <Button onClick={handleIncrease}>
+          <Buton onClick={handleIncrease}>
             <FaPlus />
-          </Button>
+          </Buton>
         </QuantityContainer>
-        <IncludeButton>Incluir</IncludeButton>
+        <Button title="Incluir" />
       </CardContainer>
     </>
   );

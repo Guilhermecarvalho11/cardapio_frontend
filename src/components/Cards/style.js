@@ -52,7 +52,7 @@ export const QuantityContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-export const Button = styled.button`
+export const Buton = styled.button`
   background: #fff;
   color: #000;
   border: none;

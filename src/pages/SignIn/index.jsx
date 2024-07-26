@@ -1,12 +1,12 @@
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import { ButonLink } from "../../components/LinkButton";
+import { LinkButton } from "../../components/LinkButton";
 import { Container } from "./styles";
 import { Logo } from "../../components/Logo";
 export function SignIn() {
   return (
     <Container>
-      <Logo primary />
+      <Logo primary fontSize={"37px"} />
 
       <label htmlFor="email">email</label>
       <Input
@@ -22,7 +22,7 @@ export function SignIn() {
       />
       <Button title="Entrar" />
 
-      <ButonLink title="criar uma conta" />
+      <LinkButton title="criar uma conta" />
     </Container>
   );
 }
