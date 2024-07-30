@@ -2,12 +2,13 @@ import { AdminPower } from "../../components/AdminPower";
 
 export function NewDishs() {
   const handleSave = () => {
-    // Lógica para salvar o novo prato
+    console.log("fui clicado");
   };
 
   return (
     <AdminPower
       title="Novo Prato"
+      titleButtonImg="Selecionar imagem"
       namePlaceholder="Ex: Salada Ceasar"
       categoryOptions={[
         { value: "Refeição", label: "Refeição" },

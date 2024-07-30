@@ -2,7 +2,7 @@ import { AdminPower } from "../../components/AdminPower";
 
 export function EditDish() {
   const handleSave = () => {
-    // Lógica para salvar as alterações do prato
+    console.log("fui clicado");
   };
 
   return (
