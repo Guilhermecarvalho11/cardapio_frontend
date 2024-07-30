@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin-bottom: 35px;
+  min-height: 100vh;
+
   form {
     display: flex;
     flex-direction: column;

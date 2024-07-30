@@ -53,8 +53,8 @@ export const QuantityContainer = styled.div`
 `;
 
 export const Buton = styled.button`
-  background: #fff;
-  color: #000;
+  background: transparent;
+  color: white;
   border: none;
   padding: 5px;
   cursor: pointer;
