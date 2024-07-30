@@ -2,12 +2,31 @@ import { Header } from "../../components/Header";
 import { LinkButton } from "../../components/LinkButton";
 import { Footer } from "../../components/Footer";
 import { MdNavigateBefore } from "react-icons/md";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 import imageMeals from "../../assets/imageMeals.svg";
-import { Container, MealsDescription } from "./style";
+import {
+  Buton,
+  ButtonOrder,
+  Container,
+  DivButtons,
+  MealsDescription,
+  Quantity,
+  QuantityContainer,
+} from "./style";
 import { Tags } from "../../components/Tags";
+import { useState } from "react";
 
 export function DescriptionDishs() {
+  const [quantity, setQuantity] = useState(0);
+
+  const handleIncrease = () => setQuantity(quantity + 1);
+  const handleDecrease = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  };
+
   const ingredient = [
     { id: 1, name: "Alface" },
     { id: 2, name: "Cebola" },
@@ -31,6 +50,18 @@ export function DescriptionDishs() {
             velit perspiciatis non, porro doloremque qui.
           </span>
           <Tags ingredients={ingredient} />
+          <DivButtons>
+            <QuantityContainer>
+              <Buton onClick={handleDecrease}>
+                <FaMinus />
+              </Buton>
+              <Quantity>{quantity}</Quantity>
+              <Buton onClick={handleIncrease}>
+                <FaPlus />
+              </Buton>
+            </QuantityContainer>
+            <ButtonOrder>Incluir</ButtonOrder>
+          </DivButtons>
         </MealsDescription>
       </Container>
       <Footer />
