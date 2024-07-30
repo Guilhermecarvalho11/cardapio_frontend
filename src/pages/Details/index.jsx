@@ -1,12 +1,9 @@
-// import { Home } from "../Home";
-import { NewDishs } from "../NewDishs";
-import { EditDish } from "../EditDishs";
+import { Home } from "../Home";
 
 export function Details() {
   return (
     <>
-      <NewDishs />
-      <EditDish />
+      <Home />
     </>
   );
 }

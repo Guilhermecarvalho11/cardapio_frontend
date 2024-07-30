@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   display: flex;
   justify-content: left;
   align-items: center;
@@ -17,6 +17,7 @@ export const Button = styled.button`
   gap: 10px;
   border-radius: 5px;
   color: white;
+  cursor: pointer;
 `;
 export const Title = styled.span`
   font-family: roboto;
