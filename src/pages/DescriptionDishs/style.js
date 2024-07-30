@@ -7,6 +7,8 @@ export const Container = styled.div`
   align-items: center;
   width: 88%;
   margin: 0 auto;
+  flex: 1;
+  min-height: 100vh;
 `;
 
 export const MealsDescription = styled.div`

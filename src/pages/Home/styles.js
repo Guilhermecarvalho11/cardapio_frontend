@@ -5,6 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   width: 88%;
   margin: 0 auto;
+  min-height: 100vh;
 `;
 export const Title = styled.h2`
   color: white;
