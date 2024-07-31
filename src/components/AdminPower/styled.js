@@ -1,20 +1,21 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-bottom: 35px;
   min-height: 100vh;
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  > h1 {
+    color: white;
+    font-family: roboto;
+    font-size: 22px;
+  }
 
   form {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    width: 88%;
-
-    > h1 {
-      color: white;
-      font-family: roboto;
-    }
-
     > button {
     }
 
@@ -39,6 +40,9 @@ export const Container = styled.div`
     > textarea {
       background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
       color: ${({ theme }) => theme.COLORS.LIGHT_500};
+      width: 100%;
+      max-width: 100%;
+      min-height: 172px;
     }
 
     .buttons {

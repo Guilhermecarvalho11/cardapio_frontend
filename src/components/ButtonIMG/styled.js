@@ -28,3 +28,9 @@ export const Icons = styled.div`
   font-size: 34px;
   color: white;
 `;
+
+export const Label = styled.label`
+  color: white;
+  font-size: 12px;
+  margin: 8px 0;
+`;
