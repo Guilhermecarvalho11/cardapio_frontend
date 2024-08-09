@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export const Container = styled.div`
   display: flex;
@@ -13,3 +14,8 @@ export const Container = styled.div`
     font-family: roboto;
   }
 `;
+
+Container.propTypes = {
+  primary: PropTypes.bool, // Agora aceita booleano
+  fontSize: PropTypes.string,
+};

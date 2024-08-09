@@ -1,11 +1,13 @@
 import { Container } from "./styles";
 import PropTypes from "prop-types";
 
-export function Button({ title }) {
+export function Button({ title, onClick }) {
   return (
     <>
       <Container>
-        <button>{title}</button>
+        <button onClick={onClick} type="button">
+          {title}
+        </button>
       </Container>
     </>
   );
@@ -13,4 +15,5 @@ export function Button({ title }) {
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
