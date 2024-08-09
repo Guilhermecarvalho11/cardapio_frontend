@@ -4,7 +4,7 @@ import { Container } from "./styles";
 
 export function Logo({ primary, fontSize }) {
   return (
-    <Container primary={primary}>
+    <Container primary={primary.toString()}>
       <img src={PolygnoSVG} />
       <h1 style={{ fontSize: fontSize }}>Food Explorer</h1>
     </Container>

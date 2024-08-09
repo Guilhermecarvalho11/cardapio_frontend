@@ -7,9 +7,9 @@ import { Logo } from "../../components/Logo";
 import { Container, Form } from "./styles";
 
 export function SignUp() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   function handleSignUp() {
     console.log("clicou", name, email, password);
@@ -24,7 +24,9 @@ export function SignUp() {
           id="name"
           type="text"
           placeholder="Exemplo: Maria da Silva"
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
         />
 
         <label htmlFor="email">email</label>
@@ -32,14 +34,18 @@ export function SignUp() {
           id="email"
           type="email"
           placeholder="Exemplo: exemplo@exemplo.com.br"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
         />
         <label htmlFor="password">senha</label>
         <Input
           id="password"
           type="password"
           placeholder="No minimo 6 caracteres"
-          onChange={(e) => setPassword(e.target.pasvalue)}
+          onChange={(e) => {
+            setPassword(e.target.pasvalue);
+          }}
         />
         <Button title="Criar conta" onClick={handleSignUp} />
       </Form>
