@@ -4,10 +4,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 85%;
-  height: 100vh;
   justify-content: center;
-  margin: 0 auto;
+  width: auto;
+  height: 100vh;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  width: 88%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto 15px;
 
   > label {
     color: white;

@@ -8,7 +8,7 @@ export function NewDishs() {
   return (
     <AdminPower
       title="Novo Prato"
-      titleButtonImg="Selecionar imagem"
+      // titleButtonImg="Selecionar imagem"
       namePlaceholder="Ex: Salada Ceasar"
       categoryOptions={[
         { value: "Refeição", label: "Refeição" },
