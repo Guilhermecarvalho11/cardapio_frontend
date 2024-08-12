@@ -4,10 +4,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 85%;
+  width: auto;
   height: 100vh;
   justify-content: center;
   margin: 0 auto;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  width: 88%;
+  flex-direction: column;
+  margin: 0 auto 15px;
 
   .title {
     display: flex;

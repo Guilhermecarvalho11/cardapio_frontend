@@ -38,7 +38,7 @@ export function SignUp() {
 
   return (
     <Container>
-      <Logo primary />
+      <Logo primary="true" />
 
       <Form>
         <label htmlFor="name">Seu nome</label>

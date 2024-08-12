@@ -12,6 +12,6 @@ export function Logo({ primary, fontSize }) {
 }
 
 Logo.propTypes = {
-  primary: PropTypes.bool,
+  primary: PropTypes.string,
   fontSize: PropTypes.string,
 };

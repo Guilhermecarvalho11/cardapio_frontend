@@ -16,6 +16,6 @@ export const Container = styled.div`
 `;
 
 Container.propTypes = {
-  primary: PropTypes.bool, // Agora aceita booleano
+  primary: PropTypes.string, // Agora aceita booleano
   fontSize: PropTypes.string,
 };
