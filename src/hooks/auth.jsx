@@ -7,6 +7,7 @@ export const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
+
   async function signIn({ email, password }) {
     try {
       const response = await api.post("/sessions", { email, password });
@@ -26,6 +27,13 @@ function AuthProvider({ children }) {
     }
   }
 
+  async function signOut() {
+    localStorage.removeItem("@cardapioon:user");
+    localStorage.removeItem("@cardapioon:token");
+
+    setData({});
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("@cardapioon:token");
     const user = localStorage.getItem("@cardapioon:user");
@@ -40,7 +48,7 @@ function AuthProvider({ children }) {
     }
   }, []);
   return (
-    <AuthContext.Provider value={{ signIn, user: data.user }}>
+    <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
       {children}
     </AuthContext.Provider>
   );
