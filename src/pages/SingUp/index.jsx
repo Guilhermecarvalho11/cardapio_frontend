@@ -15,8 +15,7 @@ export function SignUp() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  function handleSignUp(event) {
-    event.preventDefault();
+  function handleSignUp() {
     if (!name || !email || !password) {
       return alert("Favor preencher todos os campos");
     }

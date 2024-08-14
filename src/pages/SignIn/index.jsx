@@ -1,23 +1,21 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { LinkButton } from "../../components/LinkButton";
 import { Container, Form } from "./styles";
 import { Logo } from "../../components/Logo";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 
 export function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { singIn } = useAuth();
   const navigate = useNavigate();
 
+  const { signIn } = useAuth();
+
   function handleSignIn() {
-    if (!email && !password) {
-      alert("Favor preencher todos os campos");
-    }
-    singIn({ email, password });
+    signIn({ email, password });
     navigate("/");
   }
 
