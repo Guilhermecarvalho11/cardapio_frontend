@@ -1,13 +1,13 @@
-import { Container, Icons, Title, StyledLink } from "./style";
+import { Container, Icons, Title, Button } from "./style";
 
 // eslint-disable-next-line react/prop-types
 export function SingOut({ icons: Icon, title, onClick }) {
   return (
     <Container>
-      <StyledLink onClick={onClick}>
+      <Button onClick={onClick}>
         <Icons>{Icon ? <Icon /> : null}</Icons>
         <Title>{title}</Title>
-      </StyledLink>
+      </Button>
     </Container>
   );
 }

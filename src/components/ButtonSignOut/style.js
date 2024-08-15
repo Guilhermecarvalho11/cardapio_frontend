@@ -16,7 +16,7 @@ export const Icons = styled.div`
   color: white;
 `;
 
-export const StyledLink = styled.button`
+export const Button = styled.button`
   display: flex;
   align-items: center;
   background: transparent;

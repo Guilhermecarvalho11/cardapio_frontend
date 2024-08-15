@@ -10,6 +10,7 @@ import { Footer } from "../../components/Footer";
 
 export function Menu() {
   const { signOut } = useAuth();
+
   return (
     <>
       <Container>

@@ -2,11 +2,13 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useState, useEffect } from "react";
 import { api } from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
+  const navigate = useNavigate();
 
   async function signIn({ email, password }) {
     try {
@@ -18,6 +20,7 @@ function AuthProvider({ children }) {
 
       api.defaults.headers.authorization = `Bearer ${token}`;
       setData({ user, token });
+      navigate("/");
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);
@@ -32,6 +35,7 @@ function AuthProvider({ children }) {
     localStorage.removeItem("@cardapioon:token");
 
     setData({});
+    navigate("/register");
   }
 
   useEffect(() => {
@@ -46,7 +50,10 @@ function AuthProvider({ children }) {
         user: JSON.parse(user),
       });
     }
+
+    console.log("tok, U", token, user);
   }, []);
+
   return (
     <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
       {children}
