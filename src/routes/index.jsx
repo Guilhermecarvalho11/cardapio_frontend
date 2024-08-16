@@ -4,6 +4,8 @@ import { AuthRoutes } from "./auth.routes";
 
 export function Routes() {
   const { user } = useAuth();
-  console.log(user);
+
+  console.log("routes", user);
+
   return user ? <AppRoutes /> : <AuthRoutes />;
 }
