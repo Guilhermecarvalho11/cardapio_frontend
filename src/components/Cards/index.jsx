@@ -40,16 +40,20 @@ export function Card({ image, name, price }) {
           <Name>{name}</Name>
         </StyledLink>
         <Price>${price}</Price>
-        <QuantityContainer>
-          <Buton onClick={handleDecrease}>
-            <FaMinus />
-          </Buton>
-          <Quantity>{quantity}</Quantity>
-          <Buton onClick={handleIncrease}>
-            <FaPlus />
-          </Buton>
-        </QuantityContainer>
-        <Button title="Incluir" />
+        {role ? (
+          ""
+        ) : (
+          <QuantityContainer>
+            <Buton onClick={handleDecrease}>
+              <FaMinus />
+            </Buton>
+            <Quantity>{quantity}</Quantity>
+            <Buton onClick={handleIncrease}>
+              <FaPlus />
+            </Buton>
+          </QuantityContainer>
+        )}
+        {role ? "" : <Button title="Incluir" />}
       </CardContainer>
     </>
   );
