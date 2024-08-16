@@ -5,11 +5,13 @@ import { Input } from "../../components/Input";
 import { LinkButton } from "../../components/LinkButton";
 import { SingOut } from "../../components/ButtonSignOut";
 
-import { Container, Content, Div } from "./styles";
+import { Container, Content, Div, List } from "./styles";
 import { Footer } from "../../components/Footer";
 
 export function Menu() {
   const { signOut } = useAuth();
+  const { user } = useAuth();
+  const role = user.role.includes("admin");
 
   return (
     <>
@@ -24,7 +26,16 @@ export function Menu() {
             type="text"
             placeholder="Busque por pratos ou ingredientes"
           />
-          <SingOut title="Sair" onClick={signOut} />
+          <List>
+            {role && (
+              <li>
+                <LinkButton title="Novo Prato" to="/newdishes" />
+              </li>
+            )}
+            <li>
+              <SingOut title="Sair" onClick={signOut} />
+            </li>
+          </List>
         </Div>
       </Container>
       <Footer />

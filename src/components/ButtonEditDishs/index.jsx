@@ -1,10 +1,11 @@
-import { Container, Button } from "./style";
+import { Container } from "./style";
 import { CiEdit } from "react-icons/ci";
+import { LinkButton } from "../LinkButton/index";
 
 export function ButtonEditDishs() {
   return (
     <Container>
-      <Button>{<CiEdit />}</Button>
+      <LinkButton icons={CiEdit} title="" to="/editdishes" />
     </Container>
   );
 }

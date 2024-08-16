@@ -39,10 +39,12 @@ export const Div = styled.div`
   height: auto;
   padding-bottom: 5%;
   padding-left: 3px;
-  border-bottom: 3px solid ${({ theme }) => theme.COLORS.BACKGROUND_900};
+`;
 
-  > svg {
-    color: white;
-    font-size: 30px;
+export const List = styled.ul`
+  > li {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid ${({ theme }) => theme.COLORS.BACKGROUND_900};
   }
 `;
