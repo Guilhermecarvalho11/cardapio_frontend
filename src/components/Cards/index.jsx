@@ -1,5 +1,7 @@
 // import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "../../hooks/auth";
+import { ButtonEditDishs } from "../ButtonEditDishs";
 import PropTypes from "prop-types";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { IoIosHeartEmpty } from "react-icons/io";
@@ -18,6 +20,8 @@ import {
 } from "./style";
 
 export function Card({ image, name, price }) {
+  const { user } = useAuth();
+  const role = user.role.includes("admin");
   const [quantity, setQuantity] = useState(0);
 
   const handleIncrease = () => setQuantity(quantity + 1);
@@ -30,7 +34,7 @@ export function Card({ image, name, price }) {
   return (
     <>
       <CardContainer>
-        <Icon>{<IoIosHeartEmpty />}</Icon>
+        {role ? <ButtonEditDishs /> : <Icon>{<IoIosHeartEmpty />}</Icon>}
         <Image src={image} alt={name} />
         <StyledLink to="/dishs">
           <Name>{name}</Name>
