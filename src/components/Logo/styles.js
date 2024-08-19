@@ -13,6 +13,11 @@ export const Container = styled.div`
     color: white;
     font-family: roboto;
   }
+
+  > span {
+    color: #82f3ff;
+    font-size: 12px;
+  }
 `;
 
 Container.propTypes = {
