@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_TOMATO};
+  background-color: ${({ primary, theme }) =>
+    primary ? theme.COLORS.BACKGROUND_800 : theme.COLORS.BACKGROUND_TOMATO};
   display: flex;
   justify-content: center;
   color: white;

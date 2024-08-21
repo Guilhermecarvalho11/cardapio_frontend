@@ -6,6 +6,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  flex: 1;
+  gap: 12px 0;
 
   > h1 {
     color: white;
@@ -17,12 +19,13 @@ export const Container = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  gap: 10px 0;
 
   > label {
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
     font-family: roboto;
     font-size: 14px;
-    margin-bottom: 12px;
+    margin-bottom: 2px;
   }
 
   > label:first-of-type {
