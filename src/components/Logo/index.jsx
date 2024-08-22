@@ -7,7 +7,6 @@ import { Container } from "./styles";
 export function Logo({ primary, fontSize, adm }) {
   const { user } = useAuth();
   const role = user?.role.includes("admin");
-  console.log("roleLogo", role);
   return (
     <Container primary={primary}>
       <img src={PolygnoSVG} />
