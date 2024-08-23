@@ -11,7 +11,7 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/editdishes" element={<EditDish />} />
+      <Route path="/editdishes/:id" element={<EditDish />} />
       <Route path="/newdishes" element={<NewDishs />} />
       <Route path="/dishs" element={<DescriptionDishs />} />
       <Route path="/menupage" element={<Menu />} />

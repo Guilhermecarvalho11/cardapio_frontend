@@ -21,6 +21,7 @@ export function Slide({ products }) {
             image={product.image}
             name={product.name}
             price={product.price}
+            id={product.id}
           />
         </SwiperSlide>
       ))}

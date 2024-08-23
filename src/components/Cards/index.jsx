@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
@@ -19,10 +20,12 @@ import {
   StyledLink,
 } from "./style";
 
-export function Card({ image, name, price }) {
+export function Card({ id, image, name, price }) {
   const { user } = useAuth();
   const role = user.role.includes("admin");
   const [quantity, setQuantity] = useState(0);
+
+  console.log("ID capturado no ParentComponent:", id);
 
   const handleIncrease = () => setQuantity(quantity + 1);
   const handleDecrease = () => {
@@ -34,7 +37,11 @@ export function Card({ image, name, price }) {
   return (
     <>
       <CardContainer>
-        {role ? <ButtonEditDishs /> : <Icon>{<IoIosHeartEmpty />}</Icon>}
+        {role ? (
+          <ButtonEditDishs id={id} />
+        ) : (
+          <Icon>{<IoIosHeartEmpty />}</Icon>
+        )}
         <Image src={image} alt={name} />
         <StyledLink to="/dishs">
           <Name>{name}</Name>

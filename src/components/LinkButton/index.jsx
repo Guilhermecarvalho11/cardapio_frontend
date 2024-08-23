@@ -1,5 +1,4 @@
 import { Container, Icons, Title, StyledLink } from "./style";
-import PropTypes from "prop-types";
 
 // eslint-disable-next-line react/prop-types
 export function LinkButton({ icons: Icon, title, to }) {
@@ -12,8 +11,3 @@ export function LinkButton({ icons: Icon, title, to }) {
     </Container>
   );
 }
-
-LinkButton.propTypes = {
-  title: PropTypes.string.isRequired,
-  to: PropTypes.string,
-};
