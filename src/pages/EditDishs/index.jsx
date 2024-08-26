@@ -1,21 +1,24 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useItensMenu } from "../../hooks/itensMenu";
 import { api } from "../../services/api";
+
 import { MdNavigateBefore, MdOutlineFileUpload } from "react-icons/md";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { LinkButton } from "../../components/LinkButton";
-import { Container, Form, StyledButtons } from "./styled";
 import { ButtonIMG } from "../../components/ButtonIMG";
-import { useNavigate, useParams } from "react-router-dom";
+
+import { Container, Form, StyledButtons } from "./styled";
 
 export function EditDish() {
+  const { itensMenu } = useItensMenu();
+
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log("ID capturado no EditDish:", id);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const [product, setProduct] = useState({
     name: "",
@@ -26,23 +29,17 @@ export function EditDish() {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProduct((prevProduct) => ({
-      ...prevProduct,
-      [name]: value,
-    }));
+    setProduct({ ...product, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Dados do produto:", product); // Verifique se os dados estão corretos
     try {
       await api.put(`/admin/products/${id}`, product);
       navigate("/");
       alert("produto atualizado");
     } catch (error) {
       console.error("Error updating product:", error);
-      setError("Failed to update product.");
     }
   };
 
@@ -52,33 +49,16 @@ export function EditDish() {
       navigate("/admin/products");
     } catch (error) {
       console.error("Error deleting product:", error);
-      setError("Failed to delete product.");
     }
   };
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const { data } = await api.get(`/admin/products/${id}`);
-        setProduct(data);
-      } catch (error) {
-        console.error("Error fetching product:", error);
-        setError("Failed to load product data.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    if (id) {
-      fetchProduct();
-    } else {
-      setError("No product ID provided.");
-      setLoading(false);
-      console.log("não atualizado");
+    const selectedProduct = itensMenu.find((item) => item.id === Number(id));
+    if (selectedProduct) {
+      setProduct(selectedProduct);
     }
-  }, [id]);
+  }, [itensMenu, id]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
   return (
     <>
       <Header />
@@ -94,7 +74,7 @@ export function EditDish() {
               name="name"
               type="text"
               value={product.name}
-              placeholder="Ex: Salada de Frutas"
+              // placeholder="Ex: Salada de Frutas"
               onChange={handleChange}
             />
           </div>

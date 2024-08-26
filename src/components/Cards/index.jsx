@@ -25,8 +25,6 @@ export function Card({ id, image, name, price }) {
   const role = user.role.includes("admin");
   const [quantity, setQuantity] = useState(0);
 
-  console.log("ID capturado no ParentComponent:", id);
-
   const handleIncrease = () => setQuantity(quantity + 1);
   const handleDecrease = () => {
     if (quantity > 0) {
