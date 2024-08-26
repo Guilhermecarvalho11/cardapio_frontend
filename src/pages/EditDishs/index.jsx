@@ -29,7 +29,12 @@ export function EditDish() {
   });
 
   const handleChange = (e) => {
-    setProduct({ ...product, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    console.log(`Campo alterado: ${name}, Novo valor: ${value}`);
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -74,7 +79,7 @@ export function EditDish() {
               name="name"
               type="text"
               value={product.name}
-              // placeholder="Ex: Salada de Frutas"
+              placeholder="Ex: Salada de Frutas"
               onChange={handleChange}
             />
           </div>
