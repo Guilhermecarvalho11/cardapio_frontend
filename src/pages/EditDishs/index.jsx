@@ -51,7 +51,8 @@ export function EditDish() {
   const handleDelete = async () => {
     try {
       await api.delete(`/admin/products/${id}`);
-      navigate("/admin/products");
+      alert("Produto Deletado!!");
+      navigate("/");
     } catch (error) {
       console.error("Error deleting product:", error);
     }

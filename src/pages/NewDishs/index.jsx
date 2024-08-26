@@ -9,6 +9,7 @@ import { Input } from "../../components/Input";
 import { LinkButton } from "../../components/LinkButton";
 import { Container, Form } from "./styled";
 import { ButtonIMG } from "../../components/ButtonIMG";
+import { useNavigate } from "react-router-dom";
 
 export function NewDishs() {
   const [name, setName] = useState("");
@@ -16,6 +17,8 @@ export function NewDishs() {
   const [ingredients, setIngredients] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
+
+  const navigate = useNavigate();
 
   async function handleSave() {
     if (!name || !category || !ingredients || !price || !description) {
@@ -31,8 +34,8 @@ export function NewDishs() {
         price,
         description,
       });
-
       alert("Produto cadastro com sucesso");
+      navigate("/");
     } catch (erro) {
       console.log(erro);
     }
