@@ -15,7 +15,9 @@ import {
   QuantityContainer,
 } from "./style";
 import { Tags } from "../../components/Tags";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useItensMenu } from "../../hooks/itensMenu";
+import { useParams } from "react-router-dom";
 
 export function DescriptionDishs() {
   const [quantity, setQuantity] = useState(0);
@@ -27,14 +29,28 @@ export function DescriptionDishs() {
     }
   };
 
-  const ingredient = [
-    { id: 1, name: "Alface" },
-    { id: 2, name: "Cebola" },
-    { id: 3, name: "Pão naan" },
-    { id: 4, name: "pepino" },
-    { id: 5, name: "Rabanete" },
-    { id: 6, name: "tomate" },
-  ];
+  const { itensMenu } = useItensMenu();
+  console.log("itensMenu: ", itensMenu);
+
+  const { id } = useParams();
+
+  const [product, setProduct] = useState({
+    name: "",
+    category: "",
+    ingredients: "",
+    price: "",
+    description: "",
+  });
+
+  useEffect(() => {
+    const productsDescription = itensMenu.find(
+      (item) => item.id === Number(id)
+    );
+    if (productsDescription) {
+      setProduct(productsDescription);
+    }
+  }, [itensMenu, id]);
+
   return (
     <>
       <Header />
@@ -42,14 +58,9 @@ export function DescriptionDishs() {
       <Container>
         <MealsDescription>
           <img src={imageMeals} />
-          <h1>Salada Ravanelo</h1>
-          <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-            expedita, totam, aperiam autem consectetur assumenda consequuntur,
-            architecto tempora reiciendis nostrum doloribus! Ad itaque dolores
-            velit perspiciatis non, porro doloremque qui.
-          </span>
-          <Tags ingredients={ingredient} />
+          <h1>{product.name}</h1>
+          <span>{product.description}</span>
+          <Tags ingredients={product.ingredients} />
           <DivButtons>
             <QuantityContainer>
               <Buton onClick={handleDecrease}>

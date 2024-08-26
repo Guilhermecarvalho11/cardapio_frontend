@@ -41,7 +41,7 @@ export function Card({ id, image, name, price }) {
           <Icon>{<IoIosHeartEmpty />}</Icon>
         )}
         <Image src={image} alt={name} />
-        <StyledLink to="/dishs">
+        <StyledLink to={`/dishs/${id}`}>
           <Name>{name}</Name>
         </StyledLink>
         <Price>${price}</Price>
