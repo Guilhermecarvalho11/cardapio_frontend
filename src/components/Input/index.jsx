@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Container } from "./style";
+import { useRef } from "react";
+import { Container, IconWrapper } from "./style";
 
 export function Input({
   id,
@@ -10,8 +11,14 @@ export function Input({
   icon: Icon,
   onChange,
 }) {
+  const fileInputRef = useRef(null);
   return (
     <Container>
+      {Icon && (
+        <IconWrapper>
+          <Icon />
+        </IconWrapper>
+      )}
       <input
         id={id}
         name={name}
@@ -20,6 +27,7 @@ export function Input({
         placeholder={placeholder}
         icon={Icon}
         onChange={onChange}
+        ref={type === "file" ? fileInputRef : null}
       />
     </Container>
   );

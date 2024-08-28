@@ -8,7 +8,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { LinkButton } from "../../components/LinkButton";
 import { Container, Form } from "./styled";
-import { ButtonIMG } from "../../components/ButtonIMG";
+// import { ButtonIMG } from "../../components/ButtonIMG";
 import { useNavigate } from "react-router-dom";
 
 export function NewDishs() {
@@ -17,8 +17,13 @@ export function NewDishs() {
   const [ingredients, setIngredients] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
+  const [image, setImage] = useState(null);
 
   const navigate = useNavigate();
+
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
+  };
 
   async function handleSave() {
     if (!name || !category || !ingredients || !price || !description) {
@@ -26,13 +31,21 @@ export function NewDishs() {
       return;
     }
 
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("category", category);
+    formData.append("ingredients", ingredients);
+    formData.append("price", price);
+    formData.append("description", description);
+    if (image) {
+      formData.append("image", image);
+    }
+
     try {
-      await api.post("/admin/products", {
-        name,
-        category,
-        ingredients,
-        price,
-        description,
+      await api.post("/admin/products", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
       alert("Produto cadastro com sucesso");
       navigate("/");
@@ -47,15 +60,24 @@ export function NewDishs() {
       <Container>
         <LinkButton icons={MdNavigateBefore} title="voltar" to="/" />
         <h1>Novo Prato</h1>
-        <Form>
+        <Form method="post" encType="multipart/form-data">
           <>
-            <ButtonIMG icons={MdOutlineFileUpload} />
+            <label htmlFor="image">Imagem</label>
+            <Input
+              id="image"
+              type="file"
+              name="image"
+              accept="image/*"
+              placeholder={"Selecionar Imagem"}
+              icon={MdOutlineFileUpload}
+              onChange={handleImageChange}
+            />
           </>
           <>
             <label htmlFor="name">Name</label>
             <Input
               id="name"
-              type=""
+              type="text"
               placeholder={"Ex: salada Ceasar"}
               onChange={(e) => setName(e.target.value)}
             />
