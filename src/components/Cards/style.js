@@ -43,6 +43,7 @@ export const Name = styled.h3`
 export const Price = styled.p`
   font-size: 16px;
   margin-bottom: 10px;
+  color: #82f3ff;
 `;
 
 export const QuantityContainer = styled.div`

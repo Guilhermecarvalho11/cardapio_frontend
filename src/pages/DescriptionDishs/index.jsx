@@ -21,17 +21,7 @@ import { useParams } from "react-router-dom";
 
 export function DescriptionDishs() {
   const [quantity, setQuantity] = useState(0);
-
-  const handleIncrease = () => setQuantity(quantity + 1);
-  const handleDecrease = () => {
-    if (quantity > 0) {
-      setQuantity(quantity - 1);
-    }
-  };
-
   const { itensMenu } = useItensMenu();
-  console.log("itensMenu: ", itensMenu);
-
   const { id } = useParams();
 
   const [product, setProduct] = useState({
@@ -41,6 +31,13 @@ export function DescriptionDishs() {
     price: "",
     description: "",
   });
+
+  const handleIncrease = () => setQuantity(quantity + 1);
+  const handleDecrease = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  };
 
   useEffect(() => {
     const productsDescription = itensMenu.find(
