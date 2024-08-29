@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
 import { ButtonEditDishs } from "../ButtonEditDishs";
-import PropTypes from "prop-types";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { Button } from "../Button";
@@ -20,7 +19,7 @@ import {
   StyledLink,
 } from "./style";
 
-export function Card({ id, image, name, price }) {
+export function Card({ id, image_url, name, price }) {
   const { user } = useAuth();
   const role = user.role.includes("admin");
   const [quantity, setQuantity] = useState(0);
@@ -40,7 +39,7 @@ export function Card({ id, image, name, price }) {
         ) : (
           <Icon>{<IoIosHeartEmpty />}</Icon>
         )}
-        <Image src={image} alt={name} />
+        <Image src={image_url} alt={name} />
         <StyledLink to={`/dishs/${id}`}>
           <Name>{name}</Name>
         </StyledLink>
@@ -63,9 +62,3 @@ export function Card({ id, image, name, price }) {
     </>
   );
 }
-
-Card.propTypes = {
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-};

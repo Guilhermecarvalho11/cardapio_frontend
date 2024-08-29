@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import { Card } from "../Cards";
 import { CustomNavigation } from "../CustomNavigation";
 
 export function Slide({ products }) {
+  console.log("products", products);
   return (
     <Swiper
       spaceBetween={250}
@@ -18,7 +19,7 @@ export function Slide({ products }) {
         <SwiperSlide key={product.id}>
           <Card
             icon={product.icon}
-            image={product.image}
+            image={product.image_url} // Use a imagem específica para cada produto
             name={product.name}
             price={product.price}
             id={product.id}
@@ -28,14 +29,3 @@ export function Slide({ products }) {
     </Swiper>
   );
 }
-
-Slide.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};
