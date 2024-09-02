@@ -19,7 +19,8 @@ import {
   StyledLink,
 } from "./style";
 
-export function Card({ id, image_url, name, price }) {
+export function Card({ id, name, price, image_url }) {
+  console.log("Image URL in Card:", image_url);
   const { user } = useAuth();
   const role = user.role.includes("admin");
   const [quantity, setQuantity] = useState(0);
@@ -39,7 +40,9 @@ export function Card({ id, image_url, name, price }) {
         ) : (
           <Icon>{<IoIosHeartEmpty />}</Icon>
         )}
-        <Image src={image_url} alt={name} />
+        {image_url && (
+          <Image src={`http://localhost:3333${image_url}`} alt={name} />
+        )}
         <StyledLink to={`/dishs/${id}`}>
           <Name>{name}</Name>
         </StyledLink>

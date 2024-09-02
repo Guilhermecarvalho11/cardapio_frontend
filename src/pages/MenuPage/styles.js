@@ -42,6 +42,7 @@ export const Div = styled.div`
 `;
 
 export const List = styled.ul`
+  margin-top: 36px;
   > li {
     padding-bottom: 10px;
     margin-bottom: 10px;

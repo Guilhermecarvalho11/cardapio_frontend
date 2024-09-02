@@ -6,6 +6,7 @@ import { CustomNavigation } from "../CustomNavigation";
 
 export function Slide({ products }) {
   console.log("products", products);
+
   return (
     <Swiper
       spaceBetween={250}
@@ -15,17 +16,20 @@ export function Slide({ products }) {
       style={{ width: "100%", height: "auto" }}
       loop={false}
     >
-      {products.map((product) => (
-        <SwiperSlide key={product.id}>
-          <Card
-            icon={product.icon}
-            image={product.image_url} // Use a imagem específica para cada produto
-            name={product.name}
-            price={product.price}
-            id={product.id}
-          />
-        </SwiperSlide>
-      ))}
+      {products.map((product) => {
+        console.log("Image URL:", product.image_url);
+        return (
+          <SwiperSlide key={product.id}>
+            <Card
+              icon={product.icon}
+              image_url={product.image_url}
+              name={product.name}
+              price={product.price}
+              id={product.id}
+            />
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 }
