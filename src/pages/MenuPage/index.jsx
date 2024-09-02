@@ -21,6 +21,7 @@ export function Menu() {
         </Content>
         <Div>
           <Input
+            primary
             icon={MagnifyingGlassPlus}
             id="search"
             type="text"

@@ -10,10 +10,11 @@ export function Input({
   placeholder,
   icon: Icon,
   onChange,
+  primary,
 }) {
   const fileInputRef = useRef(null);
   return (
-    <Container>
+    <Container primary={primary}>
       {Icon && (
         <IconWrapper>
           <Icon />
