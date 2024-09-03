@@ -9,7 +9,8 @@ export const Container = styled.div`
 `;
 export const Title = styled.h2`
   color: white;
-  font-family: roboto;
+  font-family: poppins;
+  font-weight: 500;
   font-size: 18px;
   margin: 22px 0 22px 0;
 `;
@@ -27,16 +28,20 @@ export const Banner = styled.div`
     justify-content: center;
     color: white;
     gap: 8px;
-    width: 170px;
+    width: 100%;
     align-items: left;
-    font-family: roboto;
+    font-family: poppins;
 
     > h2 {
       font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
     }
 
     > span {
       font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
     }
   }
 `;

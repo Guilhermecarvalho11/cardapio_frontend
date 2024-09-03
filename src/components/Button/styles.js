@@ -9,7 +9,7 @@ export const Container = styled.div`
   width: 100%;
   height: 48px;
   border-radius: 5px;
-  margin-top: 12px;
+  margin-top: 20px;
 
   > button {
     background: transparent;

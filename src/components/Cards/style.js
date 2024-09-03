@@ -38,9 +38,13 @@ export const Name = styled.h3`
   background: transparent;
   font-size: 18px;
   margin-bottom: 5px;
+  font-family: poppins;
+  font-weight: 200;
 `;
 
 export const Price = styled.p`
+  font-family: poppins;
+  font-weight: 200;
   font-size: 16px;
   margin-bottom: 10px;
   color: #82f3ff;

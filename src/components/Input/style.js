@@ -16,6 +16,7 @@ export const Container = styled.div`
     padding-left: 10px;
     border: none;
     border-radius: 8px;
+    font-family: poppins;
 
     &:focus {
       border-color: #66afe9;

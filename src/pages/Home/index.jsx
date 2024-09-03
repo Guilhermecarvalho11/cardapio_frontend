@@ -31,7 +31,9 @@ export function Home() {
           <img src={imgBanner} alt="Banner" />
           <div className="titleBanner">
             <h2>Sabores inigualáveis</h2>
-            <span>Sinta o cuidado do preparo com ingredientes</span>
+            <span>
+              Sinta o cuidado do preparo com ingredientes selecionados
+            </span>
           </div>
         </Banner>
         <Title>Refeições</Title>

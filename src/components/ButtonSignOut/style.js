@@ -7,7 +7,8 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.span`
-  font-family: roboto;
+  font-family: poppins;
+  font-weight: 300;
   font-size: 24px;
   color: white;
   text-decoration: none;

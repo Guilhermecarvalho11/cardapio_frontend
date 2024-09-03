@@ -23,17 +23,22 @@ export const Form = styled.form`
 
     > h1 {
       color: white;
-      font-family: roboto;
+      font-family: poppins;
     }
   }
 
   > label {
     color: white;
-    font-family: roboto;
+    font-family: poppins;
+    font-weight: 400;
     font-size: 13px;
     align-items: end;
     margin-right: auto;
-    margin-bottom: 5px;
+    margin-top: 10px;
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
+  }
+
+  > label:first-of-type {
+    margin-bottom: 10px;
   }
 `;

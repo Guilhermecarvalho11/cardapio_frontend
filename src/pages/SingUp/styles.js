@@ -18,11 +18,15 @@ export const Form = styled.form`
 
   > label {
     color: white;
-    font-family: roboto;
+    font-family: poppins;
     font-size: 13px;
     align-items: end;
     margin-right: auto;
-    margin-bottom: 5px;
+    margin: 10px 0;
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
+  }
+
+  > label:first-of-type {
+    margin-bottom: 10px;
   }
 `;
