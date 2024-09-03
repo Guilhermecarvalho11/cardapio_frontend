@@ -9,6 +9,5 @@ export default {
     BACKGROUND_TOMATO: "#750310",
     LIGHT_400: "#C4C4CC",
     LIGHT_500: "#7C7C8A",
-    BACKGROUND_LINEAR: "#091E26",
   },
 };

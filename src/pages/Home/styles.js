@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 88%;
-  margin: 0 auto;
+  margin: 15px auto 0;
   min-height: 100vh;
 `;
 export const Title = styled.h2`
@@ -16,9 +16,10 @@ export const Title = styled.h2`
 
 export const Banner = styled.div`
   display: flex;
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_LINEAR};
+  background-image: linear-gradient(180deg, #00131c, #091e26);
   width: 100%;
   height: 120px;
+  border-radius: 8px;
 
   .titleBanner {
     display: flex;
