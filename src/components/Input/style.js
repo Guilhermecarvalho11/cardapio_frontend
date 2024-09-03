@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
   position: relative;
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+    width: 88%;
+    align-self: center;
+  }
 
   > input {
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};

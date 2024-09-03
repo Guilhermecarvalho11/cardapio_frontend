@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const StyledLink = styled(Link)`
   display: flex;
@@ -20,6 +21,10 @@ export const Title = styled.span`
   font-size: 24px;
   color: white;
   text-decoration: none;
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+    padding: 15px;
+  }
 `;
 export const Icons = styled.div`
   font-size: 34px;

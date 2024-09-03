@@ -40,6 +40,8 @@ export function SignUp() {
       <Logo primary="true" />
 
       <Form>
+        <h2>Crie sua conta</h2>
+
         <label htmlFor="name">Seu nome</label>
         <Input
           id="name"
@@ -63,9 +65,10 @@ export function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button title="Criar conta" onClick={handleSignUp} />
+        <div className="button">
+          <LinkButton title="Já tenho uma conta" to="/signin" />
+        </div>
       </Form>
-
-      <LinkButton title="Já tenho uma conta" to="/signin" />
     </Container>
   );
 }

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
+
 import PropTypes from "prop-types";
 
 export const Container = styled.div`
@@ -11,7 +13,10 @@ export const Container = styled.div`
 
   > h1 {
     color: white;
-    font-family: roboto;
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+      font-size: xx-large;
+    }
   }
 
   > span {

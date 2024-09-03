@@ -20,6 +20,7 @@ export function SignIn() {
     <Container>
       <Logo primary="true" fontSize={"37px"} />
       <Form>
+        <h2>Faça Login</h2>
         <label htmlFor="email">email</label>
         <Input
           id="email"
@@ -35,9 +36,10 @@ export function SignIn() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Button title="Entrar" onClick={handleSignIn} />
+        <div className="button">
+          <LinkButton title="criar uma conta" to="/register" />
+        </div>
       </Form>
-
-      <LinkButton title="criar uma conta" to="/register" />
     </Container>
   );
 }

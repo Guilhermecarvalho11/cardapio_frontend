@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
   background-color: ${({ primary, theme }) =>
@@ -10,6 +11,11 @@ export const Container = styled.div`
   height: 48px;
   border-radius: 5px;
   margin-top: 20px;
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+    width: 88%;
+    align-self: center;
+  }
 
   > button {
     background: transparent;
