@@ -2,6 +2,7 @@ import { useItensMenu } from "../../hooks/itensMenu";
 import { Header } from "../../components/Header";
 import { Banner, Container, Title } from "./styles";
 import imgBanner from "../../assets/imgBanner.svg";
+// import banner from "../../assets/banner.png";
 // import imgMeals from "../../assets/imageMeals.svg";
 import { Slide } from "../../components/Slide";
 import { Footer } from "../../components/Footer";
@@ -28,7 +29,9 @@ export function Home() {
       <Header />
       <Container>
         <Banner>
-          <img src={imgBanner} alt="Banner" />
+          <div className="svg">
+            <img src={imgBanner} alt="Banner" />
+          </div>
           <div className="titleBanner">
             <h2>Sabores inigualáveis</h2>
             <span>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
   display: flex;
@@ -21,6 +22,14 @@ export const Banner = styled.div`
   width: 100%;
   height: 120px;
   border-radius: 8px;
+  align-items: center;
+  margin: 25px 0;
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+    font-weight: 500;
+    align-items: center;
+    height: 220px;
+  }
 
   .titleBanner {
     display: flex;
@@ -32,16 +41,41 @@ export const Banner = styled.div`
     align-items: left;
     font-family: poppins;
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+      font-weight: 500;
+      align-items: center;
+    }
+
     > h2 {
       font-size: 18px;
-      font-style: normal;
       font-weight: 400;
+
+      @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+        font-weight: 500;
+        font-size: 24px;
+      }
     }
 
     > span {
       font-size: 12px;
       font-style: normal;
       font-weight: 300;
+
+      @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+        font-weight: 500;
+        font-size: 18px;
+        align-items: center;
+      }
+    }
+  }
+
+  img {
+    height: auto;
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+      width: auto;
+      height: 260px;
+      margin: auto;
     }
   }
 `;
