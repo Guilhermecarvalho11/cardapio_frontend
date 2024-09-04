@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.header`
   display: flex;
@@ -11,9 +12,45 @@ export const Container = styled.header`
   padding: 0 15px;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
-  > svg {
+  .bag {
+    display: flex;
     font-size: 25px;
     color: white;
+    justify-content: flex-end;
+  }
+
+  .bag > :first-child {
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+      display: none;
+    }
+  }
+
+  .logo {
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+      width: auto;
+    }
+  }
+
+  .input {
+    display: none;
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+      display: flex;
+      width: 40%;
+    }
+  }
+
+  .singOut {
+    display: none;
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+      display: flex;
+      width: auto;
+    }
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    justify-content: space-evenly;
   }
 `;
 
@@ -24,5 +61,9 @@ export const Menu = styled.button`
   > svg {
     font-size: 25px;
     color: white;
+  }
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    display: none;
   }
 `;
