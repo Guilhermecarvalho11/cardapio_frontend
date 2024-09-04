@@ -7,11 +7,11 @@ import { List, Bag } from "@phosphor-icons/react";
 import { Logo } from "../../components/Logo";
 import { OrderCounter } from "../OrderCounter/index";
 import { SingOut } from "../ButtonSignOut/index";
+import { useAuth } from "../../hooks/auth";
 
 export function Header() {
-  function handleSingOut() {
-    console.log("fui clicado");
-  }
+  const { signOut } = useAuth();
+
   return (
     <Container>
       <Link to="/MenuPage">
@@ -36,7 +36,7 @@ export function Header() {
         <OrderCounter />
       </div>
       <div className="singOut">
-        <SingOut onClick={handleSingOut} icons={IoMdExit} title={""} />
+        <SingOut title={""} icons={IoMdExit} onClick={signOut} />
       </div>
     </Container>
   );

@@ -46,6 +46,7 @@ export const Container = styled.header`
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
       display: flex;
       width: auto;
+      margin-right: 30px;
     }
   }
 
