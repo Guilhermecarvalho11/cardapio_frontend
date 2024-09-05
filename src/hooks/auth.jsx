@@ -7,6 +7,25 @@ import { useNavigate } from "react-router-dom";
 export const AuthContext = createContext({});
 export const CounterContext = createContext();
 
+function CounterProvider({ children }) {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount((prevCount) => prevCount + 1);
+
+  const decrement = () =>
+    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
+
+  return (
+    <CounterContext.Provider value={{ count, increment, decrement }}>
+      {children}
+    </CounterContext.Provider>
+  );
+}
+
+function useCounter() {
+  return useContext(CounterContext);
+}
+
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
   const navigate = useNavigate();
@@ -66,22 +85,6 @@ function AuthProvider({ children }) {
 function useAuth() {
   const context = useContext(AuthContext);
   return context;
-}
-
-function CounterProvider({ children }) {
-  const [count, setCount] = useState(0);
-
-  const increment = () => setCount((prevCount) => prevCount + 1);
-
-  return (
-    <CounterContext.Provider value={{ count, increment }}>
-      {children}
-    </CounterContext.Provider>
-  );
-}
-
-function useCounter() {
-  return useContext(CounterContext);
 }
 
 export { AuthProvider, useAuth, CounterProvider, useCounter };

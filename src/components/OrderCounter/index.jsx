@@ -3,11 +3,11 @@ import { Container, Button } from "./styles";
 import { Bag } from "@phosphor-icons/react";
 
 export function OrderCounter() {
-  const { count } = useCounter();
+  const { count, decrement } = useCounter();
 
   return (
     <Container>
-      <Button>
+      <Button onClick={decrement}>
         <Bag />
         <p>Pedidos ({count})</p>
       </Button>
