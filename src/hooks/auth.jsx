@@ -5,6 +5,7 @@ import { api } from "../services/api";
 import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext({});
+export const CounterContext = createContext();
 
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
@@ -57,7 +58,7 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={{ signIn, signOut, user: data.user }}>
-      {children}
+      <CounterProvider>{children}</CounterProvider>
     </AuthContext.Provider>
   );
 }
@@ -66,4 +67,21 @@ function useAuth() {
   const context = useContext(AuthContext);
   return context;
 }
-export { AuthProvider, useAuth };
+
+function CounterProvider({ children }) {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount((prevCount) => prevCount + 1);
+
+  return (
+    <CounterContext.Provider value={{ count, increment }}>
+      {children}
+    </CounterContext.Provider>
+  );
+}
+
+function useCounter() {
+  return useContext(CounterContext);
+}
+
+export { AuthProvider, useAuth, CounterProvider, useCounter };

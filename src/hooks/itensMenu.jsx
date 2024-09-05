@@ -4,17 +4,16 @@ import { api } from "../services/api";
 
 function useItensMenu() {
   const [itensMenu, setItensMenu] = useState([]);
-  const [img, setImg] = useState(""); // Para armazenar a imagem do banner (opcional)
-  const baseURL = "http://localhost:5173"; // Base URL para suas imagens
+  const [img, setImg] = useState("");
+  const baseURL = "http://localhost:5173";
 
   async function FetchProducts() {
     try {
-      const response = await api.get("/users/products"); // Busca produtos da API
+      const response = await api.get("/users/products");
       const products = response.data;
 
       setItensMenu(products);
 
-      // Exemplo de imagem para debug
       if (products.length > 0) {
         console.log("hook", `${baseURL}${products[0].image_url}`);
         setImg(`${baseURL}${products[0].image_url}`);

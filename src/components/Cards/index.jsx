@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 // import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useAuth } from "../../hooks/auth";
+import { useAuth, useCounter } from "../../hooks/auth";
 import { ButtonEditDishs } from "../ButtonEditDishs";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { IoIosHeartEmpty } from "react-icons/io";
@@ -20,8 +20,8 @@ import {
 } from "./style";
 
 export function Card({ id, name, price, image_url }) {
-  console.log("Image URL in Card:", image_url);
   const { user } = useAuth();
+  const { increment } = useCounter();
   const role = user.role.includes("admin");
   const [quantity, setQuantity] = useState(0);
 
@@ -60,7 +60,7 @@ export function Card({ id, name, price, image_url }) {
             </Buton>
           </QuantityContainer>
         )}
-        {role ? "" : <Button title="Incluir" />}
+        {role ? "" : <Button title="Incluir" onClick={increment} />}
       </CardContainer>
     </>
   );

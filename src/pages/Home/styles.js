@@ -47,8 +47,12 @@ export const Banner = styled.div`
     }
 
     > h2 {
-      font-size: 18px;
       font-weight: 400;
+
+      @media (min-width: ${DEVICE_BREAKPOINTS.XS}) {
+        font-size: 1.3rem;
+        font-weight: 400;
+      }
 
       @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
         font-weight: 500;
@@ -70,7 +74,15 @@ export const Banner = styled.div`
   }
 
   img {
-    height: auto;
+    width: 90%;
+    height: 160px;
+    margin: auto;
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
+      width: auto;
+      height: 200px;
+      margin: auto;
+    }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
       width: auto;

@@ -17,7 +17,6 @@ export function Slide({ products }) {
       loop={false}
     >
       {products.map((product) => {
-        console.log("Image URL:", product.image_url);
         return (
           <SwiperSlide key={product.id}>
             <Card

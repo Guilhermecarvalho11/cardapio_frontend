@@ -8,7 +8,6 @@ import { Footer } from "../../components/Footer";
 
 export function Home() {
   const { itensMenu } = useItensMenu([{}]);
-  console.log("home", itensMenu);
 
   // const mainDishs = [
   //   {
