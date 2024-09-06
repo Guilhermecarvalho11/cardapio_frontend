@@ -9,7 +9,8 @@ export function OrderCounter() {
     <Container>
       <Button onClick={decrement}>
         <Bag />
-        <p>Pedidos ({count})</p>
+        <p>Pedidos: </p>
+        <span>{count}</span>
       </Button>
     </Container>
   );

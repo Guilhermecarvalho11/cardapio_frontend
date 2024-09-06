@@ -12,19 +12,6 @@ export const Container = styled.header`
   padding: 0 15px;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
-  .bag {
-    display: flex;
-    font-size: 25px;
-    color: white;
-    justify-content: flex-end;
-  }
-
-  .bag > :first-child {
-    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
-      display: none;
-    }
-  }
-
   .logo {
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
       width: auto;

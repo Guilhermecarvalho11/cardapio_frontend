@@ -3,7 +3,7 @@ import { Input } from "../../components/Input";
 import { MagnifyingGlassPlus } from "@phosphor-icons/react";
 import { IoMdExit } from "react-icons/io";
 import { Container, Menu } from "./styles";
-import { List, Bag } from "@phosphor-icons/react";
+import { List } from "@phosphor-icons/react";
 import { Logo } from "../../components/Logo";
 import { OrderCounter } from "../OrderCounter/index";
 import { SingOut } from "../ButtonSignOut/index";
@@ -32,7 +32,6 @@ export function Header() {
         />
       </div>
       <div className="bag">
-        <Bag />
         <OrderCounter />
       </div>
       <div className="singOut">
