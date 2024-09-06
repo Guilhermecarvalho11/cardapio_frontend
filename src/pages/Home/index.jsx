@@ -1,13 +1,19 @@
-import { useItensMenu } from "../../hooks/itensMenu";
+// import { useItensMenu } from "../../hooks/itensMenu";
 import { Header } from "../../components/Header";
 import { Banner, Container, Title } from "./styles";
 import imgBanner from "../../assets/imgBanner.svg";
-// import imgMeals from "../../assets/imageMeals.svg";
 import { Slide } from "../../components/Slide";
 import { Footer } from "../../components/Footer";
+import { useFilterProducts } from "../../hooks/filterProducts";
 
 export function Home() {
-  const { itensMenu } = useItensMenu([{}]);
+  const { filteredProducts, searchTerm, setSearchTerm } = useFilterProducts();
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  console.log("searx", searchTerm);
 
   // const mainDishs = [
   //   {
@@ -24,7 +30,7 @@ export function Home() {
   // ];
   return (
     <>
-      <Header />
+      <Header onChange={handleSearchChange} value={searchTerm} />
       <Container>
         <Banner>
           <div className="svg">
@@ -38,7 +44,7 @@ export function Home() {
           </div>
         </Banner>
         <Title>Refeições</Title>
-        <Slide products={itensMenu} />
+        <Slide products={filteredProducts} />
         <Title>Pratos Principais</Title>
         {/* <Slide products={mainDishs} /> */}
       </Container>

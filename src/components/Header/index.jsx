@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { MagnifyingGlassPlus } from "@phosphor-icons/react";
@@ -9,7 +10,7 @@ import { OrderCounter } from "../OrderCounter/index";
 import { SingOut } from "../ButtonSignOut/index";
 import { useAuth } from "../../hooks/auth";
 
-export function Header() {
+export function Header({ value, onChange }) {
   const { signOut } = useAuth();
 
   return (
@@ -29,6 +30,8 @@ export function Header() {
           id="search"
           type="text"
           placeholder="Busque por pratos ou ingredientes"
+          value={value}
+          onChange={onChange}
         />
       </div>
       <div className="bag">
