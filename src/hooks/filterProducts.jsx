@@ -1,4 +1,3 @@
-// useFilterProducts.js
 import { useState, useEffect } from "react";
 import { useItensMenu } from "../hooks/itensMenu";
 
