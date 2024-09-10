@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
+import toast from "react-hot-toast";
 
 function useItensMenu() {
   const [itensMenu, setItensMenu] = useState([]);
@@ -20,7 +21,7 @@ function useItensMenu() {
       }
     } catch (erro) {
       console.error("Erro ao buscar produtos:", erro);
-      alert("Produtos não encontrados");
+      toast.error("Produtos não encontrados");
     }
   }
 

@@ -48,9 +48,10 @@ export function NewDishs() {
           "Content-Type": "multipart/form-data",
         },
       });
-      alert("Produto cadastro com sucesso");
+      toast.success("Produto cadastro com sucesso");
       navigate("/");
     } catch (erro) {
+      toast.error("Erro ao cadastra o Produto, tente novamente");
       console.log(erro);
     }
   }

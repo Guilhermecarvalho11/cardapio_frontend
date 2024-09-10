@@ -44,7 +44,7 @@ export function Routes() {
           },
         }}
       />
-      user ? <AppRoutes /> : <AuthRoutes />
+      {user ? <AppRoutes /> : <AuthRoutes />}
     </>
   );
 }

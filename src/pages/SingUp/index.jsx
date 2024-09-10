@@ -8,6 +8,7 @@ import { Container, Form } from "./styles";
 
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export function SignUp() {
   const [name, setName] = useState("");
@@ -17,18 +18,18 @@ export function SignUp() {
 
   function handleSignUp() {
     if (!name || !email || !password) {
-      return alert("Favor preencher todos os campos");
+      return toast.error("Favor preencher todos os campos");
     }
 
     api
       .post("/users", { name, email, password })
       .then(() => {
-        alert("Usuário cadastro com sucesso");
+        toast.success("Usuário cadastro com sucesso");
         navigate("/signin");
       })
       .catch((error) => {
         if (error.response) {
-          alert(error.response.data.message);
+          toast.error(error.response.data.message);
         } else {
           console.log("Não foi possivel cadastrar");
         }

@@ -3,6 +3,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { api } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export const AuthContext = createContext({});
 export const CounterContext = createContext();
@@ -41,11 +42,12 @@ function AuthProvider({ children }) {
       api.defaults.headers.authorization = `Bearer ${token}`;
       setData({ user, token });
       navigate("/");
+      toast.success(`Bem vindo ${user.name}`);
     } catch (error) {
       if (error.response) {
-        alert(error.response.data.message);
+        toast.error(error.response.data.message);
       } else {
-        alert("Não foi possivel entrar");
+        toast.error("Não foi possivel entrar");
         console.log(error.response.data.message);
       }
     }
