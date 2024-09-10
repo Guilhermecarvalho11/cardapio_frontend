@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useItensMenu } from "../../hooks/itensMenu";
 import { api } from "../../services/api";
-
+import toast from "react-hot-toast";
 import { MdNavigateBefore, MdOutlineFileUpload } from "react-icons/md";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
@@ -51,7 +51,7 @@ export function EditDish() {
   const handleDelete = async () => {
     try {
       await api.delete(`/admin/products/${id}`);
-      alert("Produto Deletado!!");
+      toast.success("Produto Deletado");
       navigate("/");
     } catch (error) {
       console.error("Error deleting product:", error);

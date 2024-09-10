@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { api } from "../../services/api";
+import toast from "react-hot-toast";
 
 import { MdNavigateBefore, MdOutlineFileUpload } from "react-icons/md";
 import { Button } from "../../components/Button";
@@ -27,7 +28,7 @@ export function NewDishs() {
 
   async function handleSave() {
     if (!name || !category || !ingredients || !price || !description) {
-      alert("Favor preencher todos os campos");
+      toast.error("Favor preencher todos os campos");
       return;
     }
 
