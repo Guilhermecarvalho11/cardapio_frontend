@@ -85,18 +85,18 @@ export function EditDish() {
               onChange={handleChange}
             />
           </div>
-          <div>
+          <>
             <label htmlFor="category">Categoria</label>
             <select
               id="category"
-              name="category"
-              value={product.category}
+              name="Categoria"
+              value={product.name}
               onChange={handleChange}
             >
               <option value="Refeição">Refeição</option>
               <option value="Pratos principais">Pratos principais</option>
             </select>
-          </div>
+          </>
           <div>
             <label htmlFor="ingredients">Ingredientes</label>
             <Input
@@ -119,7 +119,7 @@ export function EditDish() {
               onChange={handleChange}
             />
           </div>
-          <div>
+          <>
             <label htmlFor="description">Descrição</label>
             <textarea
               id="description"
@@ -128,7 +128,7 @@ export function EditDish() {
               value={product.description}
               onChange={handleChange}
             />
-          </div>
+          </>
           <StyledButtons>
             <Button title="Excluir Prato" onClick={handleDelete} primary />
             <Button title="Salvar alterações" type="submit" />

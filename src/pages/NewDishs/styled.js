@@ -37,6 +37,8 @@ export const Form = styled.form`
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
     height: 48px;
     margin-bottom: 12px;
+    width: 100%;
+    max-width: 100%;
   }
 
   > textarea {
@@ -44,7 +46,7 @@ export const Form = styled.form`
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
     width: 100%;
     max-width: 100%;
-    min-height: 172px;
+    min-height: 142px;
   }
 
   .buttons {

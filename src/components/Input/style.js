@@ -8,7 +8,7 @@ export const Container = styled.div`
   position: relative;
 
   @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
-    width: 88%;
+    width: 100%;
     align-self: center;
   }
 
