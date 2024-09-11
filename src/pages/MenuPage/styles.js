@@ -49,3 +49,8 @@ export const List = styled.ul`
     border-bottom: 3px solid ${({ theme }) => theme.COLORS.BACKGROUND_900};
   }
 `;
+
+export const Slid = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
