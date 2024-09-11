@@ -16,7 +16,7 @@ function useItensMenu() {
       setItensMenu(products);
 
       if (products.length > 0) {
-        console.log("hook", `${baseURL}${products[0].image_url}`);
+        console.log("hookIMG", `${baseURL}${products[0].image_url}`);
         setImg(`${baseURL}${products[0].image_url}`);
       }
     } catch (erro) {

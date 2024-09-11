@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
 `;
 
 export const CardContainer = styled.div`
@@ -15,6 +16,12 @@ export const CardContainer = styled.div`
   padding: 10px;
   border-radius: 5px;
   text-align: center;
+  margin: 0 5px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 20px tomato;
+  }
 `;
 
 export const Icon = styled.div`

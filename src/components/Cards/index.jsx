@@ -40,11 +40,9 @@ export function Card({ id, name, price, image_url }) {
         ) : (
           <Icon>{<IoIosHeartEmpty />}</Icon>
         )}
-        {image_url && (
-          <Image src={`http://localhost:5173${image_url}`} alt={name} />
-        )}
+        <Image src={`${image_url}`} alt={name} />
         <StyledLink to={`/dishs/${id}`}>
-          <Name>{name}</Name>
+          <Name>{`${name} >`} </Name>
         </StyledLink>
         <Price>{`R$ ${price}`}</Price>
         {role ? (
