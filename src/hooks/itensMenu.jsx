@@ -5,8 +5,8 @@ import toast from "react-hot-toast";
 
 function useItensMenu() {
   const [itensMenu, setItensMenu] = useState([]);
-  const [img, setImg] = useState("");
-  const baseURL = "http://localhost:5173";
+  const [img, setImg] = useState([]);
+  const baseURL = "http://localhost:3333";
 
   async function FetchProducts() {
     try {
@@ -17,7 +17,7 @@ function useItensMenu() {
 
       if (products.length > 0) {
         console.log("hookIMG", `${baseURL}${products[0].image_url}`);
-        setImg(`${baseURL}${products[0].image_url}`);
+        setImg(`${products[0].image_url}`);
       }
     } catch (erro) {
       console.error("Erro ao buscar produtos:", erro);

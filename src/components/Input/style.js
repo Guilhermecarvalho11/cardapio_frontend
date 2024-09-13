@@ -25,8 +25,8 @@ export const Container = styled.div`
     font-family: poppins;
 
     &:focus {
-      border-color: #66afe9;
       outline: none;
+      box-shadow: 0 0 0 2px #fe0557;
     }
   }
 `;

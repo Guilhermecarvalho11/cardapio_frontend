@@ -1,13 +1,14 @@
 export default {
   COLORS: {
     BACKGROUND_1000: "#192227",
-    BACKGROUND_900: "#0D1D25",
+    BACKGROUND_900: "#efeecc", //input
     BACKGROUND_800: "#0D161B",
-    BACKGROUND_700: "#001119",
-    BACKGROUND_500: "#7C7C8A",
-    BACKGROUND_400: "#000A0F",
-    BACKGROUND_TOMATO: "#750310",
-    LIGHT_400: "#C4C4CC",
-    LIGHT_500: "#7C7C8A",
+    BACKGROUND_700: "#1f0441", //content
+    BACKGROUND_500: "black",
+    BACKGROUND_400: "#fcab10", //background
+    BACKGROUND_TOMATO: "#fe0557", //botão
+    LIGHT_400: "#1f0441",
+    LIGHT_500: "#1f0441",
+    COLOR_WORD: "#fe0557",
   },
 };

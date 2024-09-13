@@ -4,7 +4,6 @@ import { Footer } from "../../components/Footer";
 import { MdNavigateBefore } from "react-icons/md";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
-import imageMeals from "../../assets/imageMeals.svg";
 import {
   Buton,
   ButtonOrder,
@@ -26,6 +25,7 @@ export function DescriptionDishs() {
 
   const [product, setProduct] = useState({
     name: "",
+    image_url: "",
     category: "",
     ingredients: "",
     price: "",
@@ -54,7 +54,7 @@ export function DescriptionDishs() {
       <LinkButton icons={MdNavigateBefore} title="Voltar" to="/" />
       <Container>
         <MealsDescription>
-          <img src={imageMeals} />
+          <img src={`http://localhost:3333${product.image_url}`} />
           <h1>{product.name}</h1>
           <span>{product.description}</span>
           <Tags ingredients={product.ingredients} />

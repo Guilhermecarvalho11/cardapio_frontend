@@ -42,11 +42,12 @@ export const Form = styled.form`
   }
 
   > textarea {
-    background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
     width: 100%;
     max-width: 100%;
     min-height: 142px;
+    padding: 8px;
   }
 `;
 
@@ -55,4 +56,5 @@ export const StyledButtons = styled.div`
   width: 100%;
   justify-content: space-between;
   gap: 20px;
+  margin-bottom: 12px;
 `;

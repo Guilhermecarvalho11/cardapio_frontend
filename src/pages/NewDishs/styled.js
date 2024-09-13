@@ -10,7 +10,7 @@ export const Container = styled.div`
   gap: 12px 0;
 
   > h1 {
-    color: white;
+    color: ${({ theme }) => theme.COLORS.LIGHT_400};
     font-family: roboto;
     font-size: 22px;
   }
@@ -21,11 +21,36 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 10px 0;
 
+  .inputFile {
+    cursor: pointer;
+    height: 1.5rem;
+    margin-bottom: 48px;
+
+    input {
+      margin: 0;
+      filter: alpha(opacity=0);
+      opacity: 0;
+    }
+
+    .inputFile-custom:after {
+      content: "Escolher imagem";
+      background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+      color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+      display: flex;
+      text-align: ${({ primary }) => (primary ? "center" : "")};
+      height: 30px;
+      border: none;
+      padding: 8px;
+      border-radius: 8px;
+      margin-top: 8px;
+      font-family: poppins;
+    }
+  }
+
   > label {
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
     font-family: roboto;
-    font-size: 14px;
-    margin-bottom: 2px;
+    font-weight: 400;
   }
 
   > label:first-of-type {
@@ -39,14 +64,17 @@ export const Form = styled.form`
     margin-bottom: 12px;
     width: 100%;
     max-width: 100%;
+    border-radius: 8px;
   }
 
   > textarea {
-    background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
     width: 100%;
     max-width: 100%;
     min-height: 142px;
+    border-radius: 8px;
+    padding: 8px;
   }
 
   .buttons {
@@ -54,6 +82,7 @@ export const Form = styled.form`
     width: 100%;
     justify-content: space-between;
     gap: 20px;
+    margin-bottom: 12px;
 
     > button {
       background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};

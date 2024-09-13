@@ -9,5 +9,4 @@ export const Button = styled.button`
   display: flex;
   font-size: 24px;
   background: transparent;
-  color: white;
 `;

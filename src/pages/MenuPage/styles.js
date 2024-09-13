@@ -42,11 +42,12 @@ export const Div = styled.div`
 `;
 
 export const List = styled.ul`
+  list-style: none;
   margin-top: 36px;
   > li {
     padding-bottom: 10px;
     margin-bottom: 10px;
-    border-bottom: 3px solid ${({ theme }) => theme.COLORS.BACKGROUND_900};
+    border-bottom: 3px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
   }
 `;
 

@@ -16,21 +16,20 @@ export const Button = styled.button`
   padding: 0 32px;
   gap: 10px;
   border-radius: 5px;
-  color: white;
+  color: #1f0441;
   cursor: pointer;
 `;
 export const Title = styled.span`
-  font-family: roboto;
-  color: white;
+  color: #1f0441;
   text-decoration: none;
 `;
 export const Icons = styled.div`
   font-size: 34px;
-  color: white;
+  color: #1f0441;
 `;
 
 export const Label = styled.label`
-  color: white;
-  font-size: 12px;
+  color: #1f0441;
+  font-weight: 400;
   margin: 8px 0;
 `;

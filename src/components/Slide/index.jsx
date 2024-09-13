@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import { Card } from "../Cards";
 import { CustomNavigation } from "../CustomNavigation";
 
@@ -9,12 +13,28 @@ export function Slide({ products }) {
 
   return (
     <Swiper
-      spaceBetween={250}
-      slidesPerView={2}
       pagination={{ clickable: true }}
       navigation={CustomNavigation}
       style={{ width: "100%", height: "auto" }}
       loop={false}
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        400: {
+          slidesPerView: 2,
+          spaceBetween: 120,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 120,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      }}
     >
       {products.map((product) => {
         return (

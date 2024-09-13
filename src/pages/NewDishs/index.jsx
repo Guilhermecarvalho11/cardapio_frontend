@@ -2,7 +2,7 @@ import { useState } from "react";
 import { api } from "../../services/api";
 import toast from "react-hot-toast";
 
-import { MdNavigateBefore, MdOutlineFileUpload } from "react-icons/md";
+import { MdNavigateBefore } from "react-icons/md";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
@@ -64,16 +64,17 @@ export function NewDishs() {
         <h1>Novo Prato</h1>
         <Form method="post" encType="multipart/form-data">
           <>
-            <label htmlFor="image">Imagem</label>
-            <Input
-              id="image"
-              type="file"
-              name="image"
-              accept="image/*"
-              placeholder={"Selecionar Imagem"}
-              icon={MdOutlineFileUpload}
-              onChange={handleImageChange}
-            />
+            <label htmlFor="image" className="inputFile">
+              <span className="inputFile-custom">Imagem do Prato</span>
+              <Input
+                id="image"
+                type="file"
+                name="image"
+                accept="image/*"
+                placeholder={"Selecione uma imagem"}
+                onChange={handleImageChange}
+              />
+            </label>
           </>
           <>
             <label htmlFor="name">Name</label>
@@ -100,7 +101,7 @@ export function NewDishs() {
             <Input
               id="ingredients"
               type="text"
-              placeholder={""}
+              placeholder={"adicionar +"}
               onChange={(e) => setIngredients(e.target.value)}
             />
           </>

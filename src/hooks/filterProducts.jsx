@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useItensMenu } from "../hooks/itensMenu";
 
 export function useFilterProducts() {
-  const { itensMenu } = useItensMenu();
+  const { itensMenu } = useItensMenu(); // hook para buscar produtos do banco de dados
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(itensMenu);
 

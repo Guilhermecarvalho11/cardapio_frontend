@@ -18,7 +18,9 @@ export const Title = styled.h2`
 
 export const Banner = styled.div`
   display: flex;
-  background-image: linear-gradient(180deg, #00131c, #091e26);
+  background-image: linear-gradient(180deg, #1f0441, #3b145e, #6e3f85);
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 120px;
   border-radius: 8px;
@@ -86,7 +88,7 @@ export const Banner = styled.div`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
       width: auto;
-      height: 260px;
+      height: 220px;
       margin: auto;
     }
   }
