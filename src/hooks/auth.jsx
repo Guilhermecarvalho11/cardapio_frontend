@@ -73,8 +73,6 @@ function AuthProvider({ children }) {
         user: JSON.parse(user),
       });
     }
-
-    console.log("tok, U", token, user);
   }, []);
 
   return (

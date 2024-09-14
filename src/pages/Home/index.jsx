@@ -13,8 +13,6 @@ export function Home() {
     setSearchTerm(e.target.value);
   };
 
-  console.log("searx", searchTerm);
-
   // const mainDishs = [
   //   {
   //     id: 1,

@@ -6,8 +6,6 @@ import { Toaster } from "react-hot-toast";
 export function Routes() {
   const { user } = useAuth();
 
-  console.log("routes", user);
-
   return (
     <>
       <Toaster

@@ -21,6 +21,33 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 10px 0;
 
+  .inputFile {
+    cursor: pointer;
+    height: 1.5rem;
+    margin-bottom: 48px;
+
+    input {
+      margin: 0;
+      filter: alpha(opacity=0);
+      opacity: 0;
+    }
+
+    .inputFile-custom:after {
+      content: "Escolher imagem";
+      background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+      color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+      display: flex;
+      text-align: ${({ primary }) => (primary ? "center" : "")};
+
+      height: 30px;
+      border: none;
+      padding: 8px;
+      border-radius: 8px;
+      margin-top: 8px;
+      font-family: poppins;
+    }
+  }
+
   > label {
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
     font-family: roboto;

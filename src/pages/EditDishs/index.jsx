@@ -5,13 +5,12 @@ import { useItensMenu } from "../../hooks/itensMenu";
 import { api } from "../../services/api";
 import toast from "react-hot-toast";
 
-import { MdNavigateBefore, MdOutlineFileUpload } from "react-icons/md";
+import { MdNavigateBefore } from "react-icons/md";
 import { Button } from "../../components/Button";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { LinkButton } from "../../components/LinkButton";
-import { ButtonIMG } from "../../components/ButtonIMG";
 
 import { Container, Form, StyledButtons } from "./styled";
 
@@ -21,8 +20,11 @@ export function EditDish() {
   const navigate = useNavigate();
   const { id } = useParams();
 
+  const [image, setImage] = useState(null);
+
   const [product, setProduct] = useState({
     name: "",
+    image_url: "",
     category: "",
     ingredients: "",
     price: "",
@@ -38,10 +40,34 @@ export function EditDish() {
     }));
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      console.log(`Arquivo selecionado: ${file.name}`);
+      setImage(file);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.put(`/admin/products/${id}`, product);
+      const formData = new FormData();
+      formData.append("name", product.name);
+      formData.append("category", product.category);
+      formData.append("ingredients", product.ingredients);
+      formData.append("price", product.price);
+      formData.append("description", product.description);
+
+      if (image) {
+        formData.append("image", image);
+      }
+
+      await api.put(`/admin/products/${id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       navigate("/");
       alert("produto atualizado");
     } catch (error) {
@@ -65,7 +91,6 @@ export function EditDish() {
       setProduct(selectedProduct);
     }
   }, [itensMenu, id]);
-
   return (
     <>
       <Header />
@@ -73,7 +98,19 @@ export function EditDish() {
         <LinkButton icons={MdNavigateBefore} title="Voltar" to="/" />
         <h1>Editar Prato</h1>
         <Form onSubmit={handleSubmit}>
-          <ButtonIMG icons={MdOutlineFileUpload} />
+          <>
+            <label htmlFor="image" className="inputFile">
+              <span className="inputFile-custom">Imagem do Prato</span>
+              <Input
+                id="image"
+                type="file"
+                name="image"
+                accept="image/*"
+                placeholder={"Selecione uma imagem"}
+                onChange={handleImageChange}
+              />
+            </label>
+          </>
           <div>
             <label htmlFor="name">Nome</label>
             <Input
