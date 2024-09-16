@@ -22,12 +22,26 @@ export function NewDishs() {
   const navigate = useNavigate();
 
   const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
+    const file = e.target.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    if (file.type !== "image/png") {
+      toast.error("Apenas arquivos PNG são permitidos.");
+      e.target.value = null;
+      return;
+    }
+
+    setImage(file);
+    toast.success("Imagem selecionada com sucesso!");
   };
 
-  async function handleSave() {
+  const handleSave = async () => {
     if (!image) {
-      toast.error("Favor selecionar uma foto");
+      toast.error("Selecione uma imagem PNG para continuar.");
+      return;
     }
     if (!name) {
       toast.error("Favor preencher o campo nome");
@@ -72,7 +86,7 @@ export function NewDishs() {
       toast.error("Erro ao cadastra o Produto, tente novamente");
       console.log(erro);
     }
-  }
+  };
 
   return (
     <>
