@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -20,6 +21,9 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px 0;
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+  }
 
   .inputFile {
     cursor: pointer;

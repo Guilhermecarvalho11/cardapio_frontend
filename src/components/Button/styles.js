@@ -15,6 +15,7 @@ export const Container = styled.div`
   @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
     width: 88%;
     align-self: center;
+    margin: 20px auto;
   }
 
   > button {

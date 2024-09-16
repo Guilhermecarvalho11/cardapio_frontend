@@ -10,6 +10,7 @@ export const Container = styled.div`
   margin: 0 auto;
   flex: 1;
   min-height: 100vh;
+  margin-bottom: 20px;
 `;
 
 export const MealsDescription = styled.div`
@@ -36,11 +37,12 @@ export const DivDesktop = styled.div`
 
   > h1 {
     font-size: 2rem;
-    color: white;
+    ${({ theme }) => theme.COLORS.BACKGROUND_700};
   }
 
   > span {
-    color: white;
+    ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    font-weight: 500;
   }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
@@ -63,12 +65,12 @@ export const QuantityContainer = styled.div`
 
 export const Buton = styled.button`
   background-color: transparent;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
   border: none;
   padding: 5px;
   cursor: pointer;
 `;
 
 export const Quantity = styled.span`
-  color: white;
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 `;

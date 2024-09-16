@@ -9,7 +9,6 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { LinkButton } from "../../components/LinkButton";
 import { Container, Form } from "./styled";
-// import { ButtonIMG } from "../../components/ButtonIMG";
 import { useNavigate } from "react-router-dom";
 
 export function NewDishs() {
@@ -27,8 +26,27 @@ export function NewDishs() {
   };
 
   async function handleSave() {
-    if (!name || !category || !ingredients || !price || !description) {
-      toast.error("Favor preencher todos os campos");
+    if (!image) {
+      toast.error("Favor selecionar uma foto");
+    }
+    if (!name) {
+      toast.error("Favor preencher o campo nome");
+      return;
+    }
+    if (!category) {
+      toast.error("Favor preencher o campo categoria");
+      return;
+    }
+    if (!ingredients) {
+      toast.error("Favor preencher o campo ingredientes");
+      return;
+    }
+    if (!price) {
+      toast.error("Favor preencher o campo preço");
+      return;
+    }
+    if (!description) {
+      toast.error("Favor preencher o campo descrição");
       return;
     }
 
@@ -93,7 +111,7 @@ export function NewDishs() {
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value="Refeição">Refeição</option>
-              <option value="Pratos principais">Pratos principais</option>
+              <option value="Bebidas">Bebidas</option>
             </select>
           </>
           <>

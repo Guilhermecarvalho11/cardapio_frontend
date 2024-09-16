@@ -7,6 +7,7 @@ export const Container = styled.div`
   width: 88%;
   margin: 15px auto 0;
   min-height: 100vh;
+  margin-bottom: 20px;
 `;
 export const Title = styled.h2`
   color: white;

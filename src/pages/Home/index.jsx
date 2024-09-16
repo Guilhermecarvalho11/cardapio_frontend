@@ -42,9 +42,17 @@ export function Home() {
           </div>
         </Banner>
         <Title>Refeições</Title>
-        <Slide products={filteredProducts} />
-        <Title>Pratos Principais</Title>
-        {/* <Slide products={mainDishs} /> */}
+        <Slide
+          products={filteredProducts.filter(
+            (products) => products.category === "Refeição"
+          )}
+        />
+        <Title>Bebidas</Title>
+        <Slide
+          products={filteredProducts.filter(
+            (products) => products.category === "Bebidas"
+          )}
+        />
       </Container>
       <Footer />
     </>

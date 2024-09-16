@@ -10,16 +10,14 @@ export const Container = styled.div`
 `;
 
 export const TagsProducts = styled.div`
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_1000};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
   display: flex;
   justify-content: center;
   padding: 10px;
   border-radius: 8px;
-  width: 85px;
+  width: 90px;
 
   > h1 {
-    font-family: roboto;
-    font-size: 14px;
     color: white;
   }
 `;
