@@ -6,7 +6,7 @@ export function LinkButton({ icons: Icon, title, to }) {
     <Container>
       <StyledLink to={to}>
         <Icons>{Icon ? <Icon /> : null}</Icons>
-        <Title>{title}</Title>
+        <Title primary>{title}</Title>
       </StyledLink>
     </Container>
   );

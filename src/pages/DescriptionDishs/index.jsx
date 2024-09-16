@@ -1,14 +1,17 @@
+import { useAuth } from "../../hooks/auth";
+
 import { Header } from "../../components/Header";
 import { LinkButton } from "../../components/LinkButton";
+import { Button } from "../../components/Button";
+
 import { Footer } from "../../components/Footer";
 import { MdNavigateBefore } from "react-icons/md";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 import {
   Buton,
-  ButtonOrder,
   Container,
-  DivButtons,
+  DivDesktop,
   MealsDescription,
   Quantity,
   QuantityContainer,
@@ -19,6 +22,8 @@ import { useItensMenu } from "../../hooks/itensMenu";
 import { useParams } from "react-router-dom";
 
 export function DescriptionDishs() {
+  const { user } = useAuth();
+  const role = user.role.includes("admin");
   const [quantity, setQuantity] = useState(0);
   const { itensMenu } = useItensMenu();
   const { id } = useParams();
@@ -55,21 +60,29 @@ export function DescriptionDishs() {
       <Container>
         <MealsDescription>
           <img src={`http://localhost:3333${product.image_url}`} />
-          <h1>{product.name}</h1>
-          <span>{product.description}</span>
-          <Tags ingredients={product.ingredients} />
-          <DivButtons>
-            <QuantityContainer>
-              <Buton onClick={handleDecrease}>
-                <FaMinus />
-              </Buton>
-              <Quantity>{quantity}</Quantity>
-              <Buton onClick={handleIncrease}>
-                <FaPlus />
-              </Buton>
-            </QuantityContainer>
-            <ButtonOrder>Incluir</ButtonOrder>
-          </DivButtons>
+          <DivDesktop>
+            <h1>{product.name}</h1>
+            <span>{product.description}</span>
+            <Tags ingredients={product.ingredients} />
+            {role ? (
+              ""
+            ) : (
+              <QuantityContainer>
+                <Buton onClick={handleDecrease}>
+                  <FaMinus />
+                </Buton>
+                <Quantity>{quantity}</Quantity>
+                <Buton onClick={handleIncrease}>
+                  <FaPlus />
+                </Buton>
+              </QuantityContainer>
+            )}
+            {role ? (
+              <Button title="Editar Prato" />
+            ) : (
+              <Button title="Incluir" />
+            )}
+          </DivDesktop>
         </MealsDescription>
       </Container>
       <Footer />

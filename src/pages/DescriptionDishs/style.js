@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
   display: flex;
@@ -15,31 +16,41 @@ export const MealsDescription = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
   > img {
     width: 264px;
     height: 264;
     border-radius: 50%;
   }
+`;
+
+export const DivDesktop = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   > h1 {
-    font-family: roboto;
-    font-size: 27px;
+    font-size: 2rem;
     color: white;
   }
 
   > span {
-    font-family: roboto;
-    font-size: 16px;
     color: white;
   }
-`;
 
-export const DivButtons = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 37px;
-  gap: 16px;
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+    flex-direction: row;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 80px;
+  }
 `;
 
 export const QuantityContainer = styled.div`
@@ -60,19 +71,4 @@ export const Buton = styled.button`
 
 export const Quantity = styled.span`
   color: white;
-`;
-
-export const ButtonOrder = styled.div`
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_TOMATO};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  width: 70%;
-
-  > button {
-    font-family: roboto;
-    color: white;
-    cursor: pointer;
-  }
 `;

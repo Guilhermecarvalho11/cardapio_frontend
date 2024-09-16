@@ -23,7 +23,7 @@ export const Title = styled.span`
   text-decoration: none;
 
   @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
-    padding: 15px;
+    padding: ${({ primary }) => (primary ? "0px" : "15px")};
   }
 `;
 export const Icons = styled.div`
