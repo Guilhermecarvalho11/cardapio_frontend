@@ -26,6 +26,15 @@ export const CardContainer = styled.div`
   }
 `;
 
+export const FavoriteIcon = styled.button`
+  top: 8px;
+  right: 8px;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  cursor: default;
+`;
+
 export const Icon = styled.div`
   display: flex;
   justify-content: end;

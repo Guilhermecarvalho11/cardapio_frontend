@@ -7,6 +7,38 @@ import toast from "react-hot-toast";
 
 export const AuthContext = createContext({});
 export const CounterContext = createContext();
+export const FavoritesContext = createContext();
+
+function FavoritesProvider({ children }) {
+  const [favorites, setFavorites] = useState([]);
+
+  const addFavorite = (product) => {
+    setFavorites((prevFavorites) => {
+      if (prevFavorites.some((fav) => fav.id === product.id)) {
+        return prevFavorites;
+      }
+      return [...prevFavorites, product];
+    });
+  };
+
+  const removeFavorites = (productId) => {
+    setFavorites((prevFavorites) =>
+      prevFavorites.filter((favorites) => favorites.id !== productId)
+    );
+  };
+
+  return (
+    <FavoritesContext.Provider
+      value={{ favorites, addFavorite, removeFavorites }}
+    >
+      {children}
+    </FavoritesContext.Provider>
+  );
+}
+
+function useFavorites() {
+  return useContext(FavoritesContext);
+}
 
 function CounterProvider({ children }) {
   const [count, setCount] = useState(0);
@@ -87,4 +119,11 @@ function useAuth() {
   return context;
 }
 
-export { AuthProvider, useAuth, CounterProvider, useCounter };
+export {
+  AuthProvider,
+  useAuth,
+  CounterProvider,
+  useCounter,
+  FavoritesProvider,
+  useFavorites,
+};

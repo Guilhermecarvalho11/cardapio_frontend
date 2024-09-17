@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { AuthProvider, CounterProvider } from "./hooks/auth";
+import { AuthProvider, CounterProvider, FavoritesProvider } from "./hooks/auth";
 
 import GlobalStyles from "./styles/global.js";
 import theme from "./styles/theme.js";
@@ -15,9 +15,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <GlobalStyles />
       <BrowserRouter>
         <AuthProvider>
-          <CounterProvider>
-            <Routes />
-          </CounterProvider>
+          <FavoritesProvider>
+            <CounterProvider>
+              <Routes />
+            </CounterProvider>
+          </FavoritesProvider>
         </AuthProvider>
       </BrowserRouter>
     </ThemeProvider>
