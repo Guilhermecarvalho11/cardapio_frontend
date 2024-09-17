@@ -12,6 +12,24 @@ export const FavoritesContext = createContext();
 function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
 
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem("favorites");
+    if (savedFavorites) {
+      try {
+        const parsedFavorites = JSON.parse(savedFavorites);
+        console.log("Loaded favorites:", parsedFavorites); // Verifique se os dados carregados são corretos
+        setFavorites(parsedFavorites);
+      } catch (error) {
+        console.error("Error parsing saved favorites:", error);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("Saving favorites:", favorites);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
   const addFavorite = (product) => {
     setFavorites((prevFavorites) => {
       if (prevFavorites.some((fav) => fav.id === product.id)) {
@@ -98,7 +116,7 @@ function AuthProvider({ children }) {
     const user = localStorage.getItem("@cardapioon:user");
 
     if (token && user) {
-      api.defaults.headers.authorization = `Bearar ${token}`;
+      api.defaults.headers.authorization = `Bearer ${token}`;
 
       setData({
         token,

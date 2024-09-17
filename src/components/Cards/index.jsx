@@ -28,7 +28,7 @@ export function Card({ id, name, price, image_url }) {
 
   const role = user.role.includes("admin");
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState();
 
   const handleIncrease = () => setQuantity(quantity + 1);
   const handleDecrease = () => {
