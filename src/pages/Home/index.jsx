@@ -42,7 +42,11 @@ export function Home() {
           )}
         />
         <Title>Favoritos</Title>
-        <Slide products={favorites} />
+        {favorites.length > 0 ? (
+          <Slide products={favorites} />
+        ) : (
+          <p>Nenhum favorito encontrado.</p>
+        )}
       </Container>
       <Footer />
     </>

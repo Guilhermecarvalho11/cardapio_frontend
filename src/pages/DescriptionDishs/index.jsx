@@ -59,7 +59,7 @@ export function DescriptionDishs() {
       <LinkButton icons={MdNavigateBefore} title="Voltar" to="/" />
       <Container>
         <MealsDescription>
-          <img src={`http://localhost:3333${product.image_url}`} />
+          <img src={`${import.meta.env.VITE_API_URL}${product.image_url}`} />
           <DivDesktop>
             <h1>{product.name}</h1>
             <span>{product.description}</span>

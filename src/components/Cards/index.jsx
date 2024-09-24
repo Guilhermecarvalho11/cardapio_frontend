@@ -38,20 +38,23 @@ export function Card({ id, name, price, image_url }) {
   };
 
   const handleFavoriteClick = () => {
-    setIsFavorite(!isFavorite);
-    if (isFavorite) {
+    const updatedFavoriteState = !isFavorite; // Calcula o novo estado
+
+    if (updatedFavoriteState) {
+      addFavorite({ id, name, price, image_url });
+      toast.success("Item adicionado à lista de favoritos!");
+    } else {
       removeFavorites(id);
       toast.error("Item removido da lista de favoritos");
-    } else {
-      addFavorite({ id, name, price, image_url });
-      toast.success("Item adicionado a lista de favoritos!");
     }
-    setIsFavorite(!isFavorite);
+
+    setIsFavorite(updatedFavoriteState); // Atualiza o estado com o novo valor
   };
 
   useEffect(() => {
     const favoriteExist = favorites.some((fav) => fav.id === id);
     setIsFavorite(favoriteExist);
+    console.log("favorites", favoriteExist);
   }, [favorites, id]);
 
   return (
@@ -72,7 +75,7 @@ export function Card({ id, name, price, image_url }) {
             )}
           </FavoriteIcon>
         )}
-        <Image src={`http://localhost:3333${image_url}`} alt={name} />
+        <Image src={`${import.meta.env.VITE_API_URL}${image_url}`} alt={name} />
         <StyledLink to={`/dishs/${id}`}>
           <Name>{`${name} >`} </Name>
         </StyledLink>

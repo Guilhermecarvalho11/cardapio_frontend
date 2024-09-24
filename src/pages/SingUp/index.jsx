@@ -31,7 +31,7 @@ export function SignUp() {
         if (error.response) {
           toast.error(error.response.data.message);
         } else {
-          console.log("Não foi possivel cadastrar");
+          console.log("Não foi possivel cadastrar", error);
         }
       });
   }

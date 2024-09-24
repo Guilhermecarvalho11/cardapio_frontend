@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useState, useEffect } from "react";
@@ -12,36 +14,36 @@ export const FavoritesContext = createContext();
 function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
 
+  // Carregar favoritos do localStorage ao montar o componente
   useEffect(() => {
-    const savedFavorites = localStorage.getItem("favorites");
-    if (savedFavorites) {
+    const storedFavorites = localStorage.getItem("@cardapioon:favorites");
+    if (storedFavorites) {
       try {
-        const parsedFavorites = JSON.parse(savedFavorites);
-        console.log("Loaded favorites:", parsedFavorites); // Verifique se os dados carregados são corretos
+        const parsedFavorites = JSON.parse(storedFavorites);
         setFavorites(parsedFavorites);
       } catch (error) {
-        console.error("Error parsing saved favorites:", error);
+        console.error("Erro ao carregar favoritos:", error);
       }
     }
   }, []);
 
+  // Atualizar o localStorage sempre que os favoritos mudarem
   useEffect(() => {
-    console.log("Saving favorites:", favorites);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    if (favorites.length > 0) {
+      localStorage.setItem("@cardapioon:favorites", JSON.stringify(favorites));
+    } else {
+      // Remover a chave do localStorage se não houver favoritos
+      localStorage.removeItem("@cardapioon:favorites");
+    }
   }, [favorites]);
 
   const addFavorite = (product) => {
-    setFavorites((prevFavorites) => {
-      if (prevFavorites.some((fav) => fav.id === product.id)) {
-        return prevFavorites;
-      }
-      return [...prevFavorites, product];
-    });
+    setFavorites((prevFavorites) => [...prevFavorites, product]);
   };
 
   const removeFavorites = (productId) => {
     setFavorites((prevFavorites) =>
-      prevFavorites.filter((favorites) => favorites.id !== productId)
+      prevFavorites.filter((favorite) => favorite.id !== productId)
     );
   };
 

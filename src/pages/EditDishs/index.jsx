@@ -69,9 +69,9 @@ export function EditDish() {
         },
       });
       navigate("/");
-      alert("produto atualizado");
+      toast.success("produto atualizado");
     } catch (error) {
-      console.error("Error updating product:", error);
+      toast.error("Error updating product:", error);
     }
   };
 
