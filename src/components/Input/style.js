@@ -34,7 +34,6 @@ export const Container = styled.div`
 export const IconWrapper = styled.div`
   position: absolute;
   left: 10px;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;

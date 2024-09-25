@@ -9,6 +9,7 @@ export const Container = styled.div`
   min-height: 100vh;
   margin-bottom: 20px;
 `;
+
 export const Title = styled.h2`
   color: white;
   font-family: poppins;
@@ -83,7 +84,7 @@ export const Banner = styled.div`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
       width: auto;
-      height: 200px;
+      height: 120px;
       margin: auto;
     }
 

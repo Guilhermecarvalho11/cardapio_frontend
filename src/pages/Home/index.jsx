@@ -29,23 +29,38 @@ export function Home() {
             </span>
           </div>
         </Banner>
-        <Title>Refeições</Title>
-        <Slide
-          products={filteredProducts.filter(
-            (products) => products.category === "Refeição"
-          )}
-        />
-        <Title>Bebidas</Title>
-        <Slide
-          products={filteredProducts.filter(
-            (products) => products.category === "Bebidas"
-          )}
-        />
-        <Title>Favoritos</Title>
-        {favorites.length > 0 ? (
-          <Slide products={favorites} />
+        {filteredProducts.length > 0 ? (
+          <>
+            <Title> Refeição</Title>
+            <Slide
+              products={filteredProducts.filter(
+                (products) => products.category === "Refeição"
+              )}
+            />
+          </>
         ) : (
-          <p>Nenhum favorito encontrado.</p>
+          <span>{""}</span>
+        )}
+        {filteredProducts.length > 0 ? (
+          <>
+            <Title>Bebidas</Title>
+            <Slide
+              products={filteredProducts.filter(
+                (products) => products.category === "Bebidas"
+              )}
+            />
+          </>
+        ) : (
+          <span>{""}</span>
+        )}
+        {favorites.length > 0 ? (
+          <>
+            <Title>Favoritos</Title>
+
+            <Slide products={favorites} />
+          </>
+        ) : (
+          <span>{""}</span>
         )}
       </Container>
       <Footer />

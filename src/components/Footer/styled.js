@@ -10,9 +10,7 @@ export const Container = styled.div`
   padding: 0 15px;
 
   > span {
-    font-family: roboto;
-    font-size: 12px;
     width: 100%;
-    color: ${({ theme }) => theme.COLORS.LIGHT_400};
+    color: white;
   }
 `;

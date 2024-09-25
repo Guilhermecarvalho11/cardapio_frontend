@@ -1,8 +1,7 @@
 import { useCounter } from "../../hooks/auth";
-import { Container, Button } from "./styles";
+import { Container, Button, StyledLink } from "./styles";
 import { Bag } from "@phosphor-icons/react";
 import { useAuth } from "../../hooks/auth";
-import { Link } from "react-router-dom";
 
 export function OrderCounter() {
   const { user } = useAuth();
@@ -13,11 +12,11 @@ export function OrderCounter() {
   return (
     <Container>
       {role ? (
-        <Link to={"/newdishes"}>
+        <StyledLink to={"/newdishes"}>
           <Button>
             <p>Novo Produto </p>
           </Button>
-        </Link>
+        </StyledLink>
       ) : (
         <Button onClick={decrement}>
           <Bag />

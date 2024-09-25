@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
@@ -12,6 +14,11 @@ export const Container = styled.div`
     text-align: center;
     width: 100%;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none; /* Remove a linha */
+  color: inherit; /* Mantém a cor do texto do botão */
 `;
 
 export const Button = styled.button`
