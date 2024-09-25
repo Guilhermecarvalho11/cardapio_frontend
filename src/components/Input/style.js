@@ -16,7 +16,7 @@ export const Container = styled.div`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
     display: flex;
-    text-align: ${({ primary }) => (primary ? "center" : "")};
+    text-align: ${({ $primary }) => ($primary ? "center" : "")};
     height: 48px;
     width: 100%;
     padding-left: 10px;

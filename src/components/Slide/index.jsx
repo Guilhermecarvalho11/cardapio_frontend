@@ -9,8 +9,6 @@ import { Card } from "../Cards";
 import { CustomNavigation } from "../CustomNavigation";
 
 export function Slide({ products }) {
-  console.log("products", products);
-
   return (
     <Swiper
       pagination={{ clickable: true }}

@@ -33,7 +33,6 @@ export function EditDish() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(`Campo alterado: ${name}, Novo valor: ${value}`);
     setProduct((prevProduct) => ({
       ...prevProduct,
       [name]: value,
@@ -44,7 +43,6 @@ export function EditDish() {
     const file = e.target.files[0];
 
     if (file) {
-      console.log(`Arquivo selecionado: ${file.name}`);
       setImage(file);
     }
   };
@@ -91,6 +89,7 @@ export function EditDish() {
       setProduct(selectedProduct);
     }
   }, [itensMenu, id]);
+
   return (
     <>
       <Header />

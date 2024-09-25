@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 15px;
-  margin-bottom: ${({ primary }) => (primary ? "50px" : "0")};
+  margin-bottom: ${({ $primary }) => ($primary ? "50px" : "0")};
 
   > h1 {
     color: white;

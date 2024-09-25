@@ -25,7 +25,7 @@ export function Header({ value, onChange }) {
       </div>
       <div className="input">
         <Input
-          primary
+          $primary
           icon={MagnifyingGlassPlus}
           id="search"
           type="text"

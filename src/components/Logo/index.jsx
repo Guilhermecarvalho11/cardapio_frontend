@@ -9,7 +9,7 @@ export function Logo({ primary, fontSize, adm }) {
   const role = user?.role.includes("admin");
 
   return (
-    <Container primary={primary}>
+    <Container $primary={primary}>
       <img src={PolygnoSVG} />
       <h1 style={{ fontSize: fontSize }}>Food Explorer</h1>
       {role ? <span>{adm}</span> : ""}

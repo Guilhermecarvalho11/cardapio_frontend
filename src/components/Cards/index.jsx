@@ -54,7 +54,6 @@ export function Card({ id, name, price, image_url }) {
   useEffect(() => {
     const favoriteExist = favorites.some((fav) => fav.id === id);
     setIsFavorite(favoriteExist);
-    console.log("favorites", favoriteExist);
   }, [favorites, id]);
 
   return (
@@ -63,7 +62,7 @@ export function Card({ id, name, price, image_url }) {
         {role ? (
           <ButtonEditDishs id={id} />
         ) : (
-          <FavoriteIcon isFavorite={isFavorite} onClick={handleFavoriteClick}>
+          <FavoriteIcon $isFavorite={isFavorite} onClick={handleFavoriteClick}>
             {isFavorite ? (
               <Icon>
                 <IoIosHeart />

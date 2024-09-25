@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
-  background-color: ${({ primary, theme }) =>
-    primary ? theme.COLORS.BACKGROUND_800 : theme.COLORS.BACKGROUND_TOMATO};
+  background-color: ${({ $primary, theme }) =>
+    $primary ? theme.COLORS.BACKGROUND_800 : theme.COLORS.BACKGROUND_TOMATO};
   display: flex;
   justify-content: center;
   color: white;

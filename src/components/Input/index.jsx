@@ -14,7 +14,7 @@ export function Input({
 }) {
   const fileInputRef = useRef(null);
   return (
-    <Container primary={primary}>
+    <Container $primary={primary}>
       {Icon && (
         <IconWrapper>
           <Icon />
