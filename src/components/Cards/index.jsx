@@ -78,7 +78,7 @@ export function Card({ id, name, price, image_url }) {
         <StyledLink to={`/dishs/${id}`}>
           <Name>{`${name} >`} </Name>
         </StyledLink>
-        <Price>{`R$ ${price}`}</Price>
+        <Price>{`R$ ${price.toFixed(2).replace(".", ", ")}`}</Price>
         {role ? (
           ""
         ) : (
