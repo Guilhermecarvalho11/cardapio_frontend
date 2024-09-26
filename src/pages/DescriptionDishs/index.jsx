@@ -1,4 +1,4 @@
-import { useAuth } from "../../hooks/auth";
+import { useAuth, useCounter } from "../../hooks/auth";
 
 import { Header } from "../../components/Header";
 import { LinkButton } from "../../components/LinkButton";
@@ -12,6 +12,7 @@ import {
   Buton,
   Container,
   DivDesktop,
+  DivLinkButton,
   MealsDescription,
   Quantity,
   QuantityContainer,
@@ -27,6 +28,7 @@ export function DescriptionDishs() {
   const [quantity, setQuantity] = useState(0);
   const { itensMenu } = useItensMenu();
   const { id } = useParams();
+  const { increment } = useCounter();
 
   const [product, setProduct] = useState({
     name: "",
@@ -56,8 +58,10 @@ export function DescriptionDishs() {
   return (
     <>
       <Header />
-      <LinkButton icons={MdNavigateBefore} title="Voltar" to="/" />
       <Container>
+        <DivLinkButton>
+          <LinkButton icons={MdNavigateBefore} title="Voltar" to="/" primary />
+        </DivLinkButton>
         <MealsDescription>
           <img src={`${import.meta.env.VITE_API_URL}${product.image_url}`} />
           <DivDesktop>
@@ -80,7 +84,7 @@ export function DescriptionDishs() {
             {role ? (
               <Button title="Editar Prato" />
             ) : (
-              <Button title="Incluir" />
+              <Button title="Incluir" onClick={increment} />
             )}
           </DivDesktop>
         </MealsDescription>

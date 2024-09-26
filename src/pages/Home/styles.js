@@ -64,11 +64,11 @@ export const Banner = styled.div`
 
     > span {
       font-size: 0.8rem;
+      font-weight: 400;
 
       @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
-        font-weight: 500;
-        font-size: 1.1rem;
-        align-items: center;
+        font-size: 1rem;
+        padding: 8px;
       }
     }
   }

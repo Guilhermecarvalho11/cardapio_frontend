@@ -16,10 +16,10 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.span`
-  font-family: poppins;
-  font-weight: 200;
-  font-size: 24px;
-  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: ${({ $primary, theme }) =>
+    $primary ? theme.COLORS.BACKGROUND_TOMATO : "white"};
   text-decoration: none;
 
   @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
@@ -28,5 +28,5 @@ export const Title = styled.span`
 `;
 export const Icons = styled.div`
   font-size: 34px;
-  color: white;
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_TOMATO};
 `;

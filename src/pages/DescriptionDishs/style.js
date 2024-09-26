@@ -11,6 +11,15 @@ export const Container = styled.div`
   flex: 1;
   min-height: 100vh;
   margin-bottom: 20px;
+  position: relative;
+`;
+
+export const DivLinkButton = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  z-index: 10;
 `;
 
 export const MealsDescription = styled.div`

@@ -28,7 +28,7 @@ export function Menu() {
     <>
       <Container>
         <Content>
-          <LinkButton title="Menu" to="/" icons={X} />
+          <LinkButton title="Menu" to="/" icons={X} primary />
         </Content>
         <Div>
           <Input

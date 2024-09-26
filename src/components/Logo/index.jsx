@@ -19,7 +19,7 @@ export function Logo({
   return (
     <Container $primary={primary} $location={location}>
       {showImage && <img src={simpsons} alt="Logo Simpsons" />}
-      {showPhrase && <h1 style={{ fontSize: fontSize }}>Simpsons Food</h1>}
+      {showPhrase && <h1 style={{ fontSize: fontSize }}>Simpsons Snack</h1>}
       {role ? <span>{adm}</span> : null}
     </Container>
   );
