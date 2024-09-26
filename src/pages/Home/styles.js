@@ -21,10 +21,9 @@ export const Title = styled.h2`
 export const Banner = styled.div`
   display: flex;
   background-image: linear-gradient(180deg, #1f0441, #3b145e, #6e3f85);
-
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 120px;
+  height: 150px;
   border-radius: 8px;
   align-items: center;
   margin: 25px 0;
@@ -32,7 +31,7 @@ export const Banner = styled.div`
   @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
     font-weight: 500;
     align-items: center;
-    height: 220px;
+    margin: 40px 0;
   }
 
   .titleBanner {
@@ -43,7 +42,6 @@ export const Banner = styled.div`
     gap: 8px;
     width: 100%;
     align-items: left;
-    font-family: poppins;
 
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
       font-weight: 500;
@@ -65,33 +63,13 @@ export const Banner = styled.div`
     }
 
     > span {
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 300;
+      font-size: 0.8rem;
 
       @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 1.1rem;
         align-items: center;
       }
-    }
-  }
-
-  img {
-    width: 90%;
-    height: 160px;
-    margin: auto;
-
-    @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
-      width: auto;
-      height: 120px;
-      margin: auto;
-    }
-
-    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
-      width: auto;
-      height: 220px;
-      margin: auto;
     }
   }
 `;

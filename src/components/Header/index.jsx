@@ -21,7 +21,12 @@ export function Header({ value, onChange }) {
         </Menu>
       </Link>
       <div className="logo">
-        <Logo fontSize={"20px"} adm={"ADMIN"} />
+        <Logo
+          fontSize={"20px"}
+          adm={"ADMIN"}
+          location="header"
+          showPhrase={true}
+        />
       </div>
       <div className="input">
         <Input

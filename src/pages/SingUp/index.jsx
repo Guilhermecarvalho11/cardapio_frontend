@@ -38,7 +38,7 @@ export function SignUp() {
 
   return (
     <Container>
-      <Logo primary={"primary"} />
+      <Logo primary={"primary"} showImage={true} />
 
       <Form>
         <h2>Crie sua conta</h2>

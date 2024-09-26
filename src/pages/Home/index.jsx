@@ -1,10 +1,10 @@
 import { Header } from "../../components/Header";
 import { Banner, Container, Title } from "./styles";
-import imgBanner from "../../assets/imgBanner.svg";
 import { Slide } from "../../components/Slide";
 import { Footer } from "../../components/Footer";
 import { useFilterProducts } from "../../hooks/filterProducts";
 import { useFavorites } from "../../hooks/auth";
+import { Logo } from "../../components/Logo";
 
 export function Home() {
   const { filteredProducts, searchTerm, setSearchTerm } = useFilterProducts();
@@ -19,13 +19,11 @@ export function Home() {
       <Header onChange={handleSearchChange} value={searchTerm} />
       <Container>
         <Banner>
-          <div className="svg">
-            <img src={imgBanner} alt="Banner" />
-          </div>
+          <Logo showImage={true} location={"banner"} />
           <div className="titleBanner">
-            <h2>Sabores inigualáveis</h2>
+            <h2>Simpsons Snack</h2>
             <span>
-              Sinta o cuidado do preparo com ingredientes selecionados
+              Hambúrgueres, Cachorro-Quente e Coxinhas. O sabor de Springfield !
             </span>
           </div>
         </Banner>

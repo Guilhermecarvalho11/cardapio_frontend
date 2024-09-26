@@ -53,14 +53,13 @@ export const Form = styled.form`
   }
 
   > label {
+    font-size: 1.2rem;
     color: white;
-    align-items: end;
-    margin-right: auto;
     margin: 10px 0;
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
 
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
-      width: 88%;
+      color: ${({ theme }) => theme.COLORS.LIGHT_400};
       align-self: center;
     }
   }

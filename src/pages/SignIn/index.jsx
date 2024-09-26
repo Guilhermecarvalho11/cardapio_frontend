@@ -18,7 +18,7 @@ export function SignIn() {
 
   return (
     <Container>
-      <Logo primary={"primary"} fontSize={"37px"} />
+      <Logo primary={"primary"} fontSize={"37px"} showImage={true} />
       <Form>
         <h2>Faça Login</h2>
         <label htmlFor="email">email</label>

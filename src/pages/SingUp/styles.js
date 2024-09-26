@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
   width: auto;
   height: 100vh;
 
@@ -19,7 +20,7 @@ export const Form = styled.form`
   width: 88%;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto 15px;
+  margin: 0 auto;
 
   @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
@@ -43,6 +44,7 @@ export const Form = styled.form`
   }
 
   > label {
+    font-size: 1.2rem;
     color: white;
     align-items: end;
     margin-right: auto;
