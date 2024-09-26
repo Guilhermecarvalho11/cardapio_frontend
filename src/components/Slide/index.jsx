@@ -17,8 +17,8 @@ export function Slide({ products }) {
       loop={false}
       breakpoints={{
         320: {
-          slidesPerView: 1,
-          spaceBetween: 10,
+          slidesPerView: 2,
+          spaceBetween: 150,
         },
         400: {
           slidesPerView: 2,
