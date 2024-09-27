@@ -3,6 +3,7 @@ Simpsons Sneack - cardapio Online
 # Descrição
 
 Este projeto é um cardápio online que permite gerenciar produtos e ingredientes, desenvolvido usando Vite e React. Ele oferece uma interface simples para criar, editar e listar produtos em um menu digital.
+Para fazer um usuario ADM, desenvolvi uma condição para no momento do cadastro, o nome do usuario ser "admin" e automaticamente ele tera a role de adm do site.
 
 # Tecnologias Utilizadas
 
